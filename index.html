@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natabari High School | Coochbehar, West Bengal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d4a96;
+            --secondary: #f6871f;
+            --accent: #2ecc71;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-image {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/383776.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+        }
+        
+        .hero-image:hover {
+            background-position: bottom;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -10px;
+            left: 25%;
+            background-color: var(--secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .section-title:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .facility-card {
+            transition: all 0.3s ease;
+        }
+        
+        .facility-card:hover .facility-icon {
+            transform: rotateY(180deg) scale(1.1);
+            color: var(--secondary);
+        }
+        
+        .facility-icon {
+            transition: all 0.5s ease;
+        }
+        
+        .teacher-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+        }
+        
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+
+
+
+
+/* ################################ Nav Container ################################ */
+.responsive-nav {
+  width: 100%;
+  background: #fff;
+}
+
+/* Nav Links */
+.responsive-nav .mobile-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.responsive-nav .mobile-link:hover {
+  background: #1d4ed8;
+  color: white;
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+  .responsive-nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: absolute;
+    
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .responsive-nav.show {
+    display: flex;
+    animation: slideDown 0.3s ease;
+    top: 70px;
+  }
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+  .responsive-nav {
+    display: flex !important;
+    justify-content: center;
+    gap: 1.5rem;
+    position: static;
+    padding: 0.5rem 0;
+  }
+
+  .responsive-nav .mobile-link:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.result-btn-breathe {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  background-color: #10b981; /* Tailwind emerald-500 */
+  border-radius: 8px;
+  text-decoration: none;
+  animation: breathePulse 2.5s infinite ease-in-out;
+  box-shadow: 0 0 0 rgba(16, 185, 129, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-btn-breathe:hover {
+  transform: scale(1.05);
+}
+
+@keyframes breathePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 12px 10px rgba(16, 185, 129, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+}
+
+
+
+
+
+/* ############################################# TESTOMONIALS FEEDBACK START  ###############################  */
+.testimonial-strip {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-left 60s linear infinite;
+  width: max-content;
+}
+
+.testimonial-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  color: #374151; /* Tailwind gray-700 */
+}
+
+.testimonial-box p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.testimonial-box h4 {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.testimonial-box span {
+  font-size: 0.8rem;
+  color: #6b7280; /* Tailwind gray-500 */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/*    ######################################################  HEADER DESIGN  #################################   */
+.section-title {
+  background: linear-gradient(90deg, #f59e0b, #10b981, #3b82f6, #f59e0b);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTitle 6s ease infinite;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+   font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.section-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientTitle {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+
+
+
+.scroll-wrapper {
+  overflow: hidden;
+  flex: 1;
+  position: relative;
+}
+
+.scroll-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/*  ################################### NAV MENU BOX SIZE FOR PHONES   ################################# */
+.duration-300{
+    transition-duration: 300ms;
+    font-size: 10px;
+}
+
+
+
+
+/*    ############################  LANDER MAIN NAME DESIGN #################################   */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.hero-bold-glow {
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff0000, #ff7f00, #ffd700, #ff0000);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heroGlow 4s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 85, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.hero-bold-glow:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 30px rgba(255, 128, 0, 0.7);
+}
+
+@keyframes heroGlow {
+  0% {
+    background-position: 0% center;
+    text-shadow: 0 0 8px rgba(255, 85, 0, 0.4);
+  }
+  50% {
+    background-position: 100% center;
+    text-shadow: 0 0 25px rgba(255, 170, 0, 0.8);
+  }
+  100% {
+    background-position: 0% center;
+    text-shadow: 0 0 8px rgba(255, 85, 0, 0.4);
+  }
+}
+
+
+
+
+
+.hero-subline {
+  text-align: center;
+  font-weight: 500;
+  background: linear-gradient(90deg, #f59e0b, #eab308, #f97316);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subGlow 5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.hero-subline:hover {
+  transform: scale(1.03);
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+@keyframes subGlow {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+
+/*  ################################################# DOWNLOAD BUTTON ACADEMIC  ######################################   */
+.btn-download {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background-color: #1e40af; /* Tailwind blue-800 */
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: pulseGlowBtn 2.5s infinite ease-in-out;
+  box-shadow: 0 0 0 rgba(30, 64, 175, 0.5);
+}
+
+.btn-download:hover {
+  transform: scale(1.05);
+  background-color: #2563eb; /* Tailwind blue-600 */
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+}
+
+@keyframes pulseGlowBtn {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(59, 130, 246, 0.7);
+  }
+}
+
+
+
+/*  ###########################################  RESULT BUTTON 10TH & 12TH ################################  */
+.result-btn-animated {
+  display: inline-block;
+  min-width: 10px;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem; /* text-lg */
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(270deg, #f43f5e, #f59e0b, #10b981, #3b82f6, #f43f5e);
+  background-size: 400% 400%;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: glowAnim 6s ease infinite, breatheAnim 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-btn-animated:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes glowAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes breatheAnim {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/804337.jpg" alt="West Bengal High School logo featuring an open book with sunrise background in blue and orange colors" class="h-12 w-auto">
+                <div>
+                    <h1 class="text-xl font-bold text-gray-800">Natabari High School</h1>
+                    <p class="text-xs text-gray-600">Natabari-Coochbehar, West Bengal | Established 1967</p>
+                </div>
+            </div>
+            
+<!-- Mobile Toggle Button -->
+<button id="menuToggleBtn" class="md:hidden text-white bg-blue-700 px-4 py-2 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300 focus:outline-none">
+  ☰ Menu
+</button>
+
+<!-- Responsive Navigation -->
+<nav id="mobileNavMenu" class="responsive-nav hidden">
+  <a href="#home" class="mobile-link">🏠 Home</a>
+  <a href="#about" class="mobile-link">📘 About</a>
+  <a href="#academics" class="mobile-link">🎓 Academics</a>
+  <a href="#facilities" class="mobile-link">🏢 Facilities</a>
+  <a href="#gallery" class="mobile-link">🖼️ Gallery</a>
+  <a href="#contact" class="mobile-link">📞 Contact</a>
+</nav>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("menuToggleBtn");
+    const mobileMenu = document.getElementById("mobileNavMenu");
+
+    toggleBtn.addEventListener("click", function () {
+      mobileMenu.classList.toggle("show");
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Optional: Click outside to close
+    document.addEventListener("click", function (event) {
+      const isInside = toggleBtn.contains(event.target) || mobileMenu.contains(event.target);
+      if (!isInside && mobileMenu.classList.contains("show")) {
+        mobileMenu.classList.remove("show");
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  });
+</script>
+
+
+        </div>
+        
+    </header>
+
+    <!-- ######################################  Hero Section ##########################################  -->
+<section id="home"></section>
+    <section class="hero-image h-96 flex items-center justify-center text-white relative overflow-hidden">
+        <div class="text-center px-4 z-10">
+            <h1 class="hero-bold-glow text-4xl md:text-5xl font-bold mb-4">
+  Welcome to Natabari High School (H.S)
+</h1>
+
+            <p class="hero-subline text-xl mb-6">Quality Education in the Heart of Coochbehar</p>
+
+            <div class="flex justify-center space-x-4">
+                <a href="#admission" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 text-lg">Admissions</a>
+                <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-800 px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 text-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <!-- Announcement Bar -->
+    <div class="bg-blue-800 text-white py-2 px-4">
+        <div class="container mx-auto flex items-center justify-center md:justify-between">
+            <div class="hidden md:flex items-center space-x-4 overflow-hidden w-full max-w-5xl relative">
+  <span class="text-yellow-300 whitespace-nowrap mr-4">📢 Upcoming Events:</span>
+  <div class="scroll-wrapper">
+    <div class="scroll-content">
+      <span class="text-sm mr-8">Annual Sports Day - 15th December 2024</span>
+      <span class="text-sm mr-8">|</span>
+      <span class="text-sm mr-8">Parent-Teacher Meeting - 20th December 2024</span>
+      <span class="text-sm mr-8">|</span>
+      <span class="text-sm mr-8">Republic Day Celebration - 26th January 2024</span>
+      <span class="text-sm mr-8">|</span>
+      <span class="text-sm mr-8">Science Exhibition - 5th February 2024</span>
+      <!-- Repeat if you want longer scroll -->
+    </div>
+  </div>
+</div>
+
+            <!-- 🔹 Button Wrapper -->
+<div class="flex flex-wrap justify-center items-center gap-4 py-2 mt-0">
+  <a href="https://www.wbbse.wb.gov.in" class="result-btn-animated">
+    📘 MP Result
+  </a>
+  <a href="https://result.wb.gov.in/" class="result-btn-animated">
+    📗 HS Results
+  </a>
+</div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="bg-gray-100 py-4">
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+            <a href="#academics" class="bg-white p-4 rounded-lg shadow hover:shadow-lg text-center transition-all duration-300 text-lg">
+                <div class="text-blue-700 text-xl mb-2">📚</div>
+                <p class="text-sm font-medium">Academics</p>
+            </a>
+            <a href="#admission" class="bg-white p-4 rounded-lg shadow hover:shadow-lg text-center transition-all duration-300 text-lg">
+                <div class="text-blue-700 text-xl mb-2">🏫</div>
+                <p class="text-sm font-medium">Admissions</p>
+            </a>
+            <a href="https://wbbse.wb.gov.in/Web/Notification?l=TUFJTg==&t=TjI=&x=4CITZVr5u30+uRvFqu7mEg==" class="bg-white p-4 rounded-lg shadow hover:shadow-lg text-center transition-all duration-300 text-lg">
+                <div class="text-blue-700 text-xl mb-2">🎓</div>
+                <p class="text-sm font-medium">Notification's</p>
+            </a>
+            <a href="#holidays" class="bg-white p-4 rounded-lg shadow hover:shadow-lg text-center transition-all duration-300 text-lg">
+                <div class="text-blue-700 text-xl mb-2">📅</div>
+                <p class="text-sm font-medium">Holiday's</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+<section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 section-title">About Our School</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center text-lg">
+            <div>
+                <p class="text-gray-700 mb-6">
+                    Natabari High School (H.S.), established in 1967, is a government-aided co-educational institution located in Debottar Charaljani, Natabari I, under the Cooch Behar district of West Bengal. Affiliated with WBBSE and WBCHSE, our school offers classes from V to XII, including both Arts and Science streams at the Higher Secondary level. 
+                    <br><br>
+                    Surrounded by greenery and a peaceful rural atmosphere, our school provides the perfect environment for learning and character development. We focus on academic excellence, moral values, and all-round personality growth. Through our active NSS unit and co-curricular programs, we ensure students grow into responsible and aware citizens of tomorrow.
+                </p>
+
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        <span>WBBSE & WBCHSE affiliated school with Arts & Science streams</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        <span>Dedicated and experienced faculty members</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        <span>Co-curricular engagement through NSS and various social activities</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        <span>Focus on discipline, moral education, and community values</span>
+                    </li>
+                </ul>
+                    
+                    <a href="https://school.banglarshiksha.gov.in/ws/website/history/19030408602" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition duration-300 text-lg transform hover:scale-105 pulse">Read More</a>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/7073.jpg" alt="Front view of West Bengal High School building with colonial architecture and lush green lawns" class="w-full rounded-lg shadow-lg">
+                    <div class="absolute -bottom-6 -right-6 bg-yellow-400 p-4 rounded-lg shadow-xl floating">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold">58+</p>
+                            <p class="text-sm">Years of Excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-blue-700 mb-4">🏆</div>
+                    <h3 class="text-xl font-bold mb-2">Our Vision</h3>
+                    <p class="text-gray-700">To nurture young minds to become responsible global citizens through comprehensive education.</p>
+                </div>
+                
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-blue-700 mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-2">Our Mission</h3>
+                    <p class="text-gray-700">Provide quality education that fosters intellectual, physical, social and emotional development.</p>
+                </div>
+                
+                <div class="card bg-gray-50 p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-blue-700 mb-4">💡</div>
+                    <h3 class="text-xl font-bold mb-2">Our Values</h3>
+                    <p class="text-gray-700">Integrity, Excellence, Compassion, Respect, and Lifelong Learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Messages Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Messages from Our Leaders</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md text-center">
+                    <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 border-4 border-blue-200">
+                        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/189078.jpg" alt="Headmaster of Natabari High School" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Principal (HOI)</h3>
+                    <p class="text-gray-700 mb-4 italic">"Education is the most powerful tool to shape the future."<br><br>
+
+At Natabari High School (H.S.), we are committed to nurturing not just intelligent minds but responsible, compassionate, and confident individuals. Our aim is to provide an environment where students are inspired to think, learn, and grow — not only for academic success, but to become changemakers in society.</p>
+                    <p class="text-blue-700 font-medium">- SRI RANJEET SEN</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md text-center">
+                    <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 border-4 border-blue-200">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ed04418-afd2-44bd-bb3f-25ac7ff0f34c.png" alt="Assistant Headmaster of Natabari High School" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Assistant Principal</h3>
+                    <p class="text-gray-700 mb-4 italic">At Natabari High School (H.S.), we believe that every student has the potential to shine.<br><br>
+
+Our mission is to build strong foundations through quality education, values, and life skills. We aim to nurture not just scholars, but confident individuals ready to lead, innovate, and inspire.
+
+Let us guide our students to dream big, think bold, and grow with purpose.</p>
+                    <p class="text-blue-700 font-medium">- ACHINTYA KUMAR SAHA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Academics Section -->
+    <section id="academics" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Our Academic Programs</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                    <div class="bg-yellow-100 p-4 rounded-full mb-4 mx-auto" style="width: 80px; height: 80px;">
+                        <img src="data:image/png;base64,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" alt="Primary school children learning with colorful blocks and books" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center">Primary (V-VIII)</h3>
+                    <p class="text-gray-700 mb-4">Play-based learning with emphasis on foundational literacy, numeracy, and values.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>- Activity-based teaching methodology</li>
+                        <li>- Foundational language and math skills</li>
+                        <li>- Creative arts and physical development</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                    <div class="bg-blue-100 p-4 rounded-full mb-4 mx-auto" style="width: 80px; height: 80px;">
+                        <img src="data:image/jpeg;base64,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" alt="Middle school students conducting science experiments in a laboratory" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center">Secondary (IX-X)</h3>
+                    <p class="text-gray-700 mb-4">Developing critical thinking with introduction to core subjects and life skills.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>- Comprehensive subject knowledge</li>
+                        <li>- Project-based learning</li>
+                        <li>- Value education and personality development</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                    <div class="bg-green-100 p-4 rounded-full mb-4 mx-auto" style="width: 80px; height: 80px;">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGB8bGRcYGSAgHxsiHx8aHSIfHyAfHyggIB0lICUdIjEhJyorLi4uFyAzODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAAABgQFBwMCAQj/xABREAACAQMCAwUFAwcGCgkFAQABAgMABBEFIQYSMQcTQVFhFCIycYFCkaEVIzNSYsHRJHKCkrHwFzVDVHOTssLS4RYlU1VjlLPD8Qg0RHSiJv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDcaKKKAooooCiiigKKKVeLOPrOx92STnl8Ik3Yn6dKBqqo1nia0tQTPOiehO/3VnwuNb1XdB7BbHxb9Iw28PDxq40bspsYvzlxzXL9S8rZFBEu+12JiVsrWe5bwKrhfvrgdY4iuM91awWy+BfLN+Jx+FN6a7YQHuoShYbd3AvMf/5HT51aXV3J3BkiiLPy5WNvdJ9D5GgzscK6/KPzuq8noiKP9lRXwdmuondtau8/syuB+DVcHia+Pd80cURaRUaN8lk5s4O2xBrlqOuXkVjPKZI0dJymW+yoJ6frE7YHkaCsPZpqA3XWrzPrK/8AxVFvtE1e0AJ1xVz8Im5Tn+uDVrY8YXcsdzNgRLAkRCyIcuXUnmxnIBI2Brld290b15nghupUt0ITfYEn4Q23Mf3Cg4RanxHCoYx212nmuxI+akD8K7w9rJiPLfWM9uc45gOZfvxVnoWuGORFFqyCdXYRowIBTHPsfhOSAR51err9nN7kpCnpyzLy/dzDB+lAaHxlZXY/M3CMf1ScH7jV8DSNrXZfp1z78ady53DwnH12pbWHV9NYrBOl/CvWJmHeqBj67b0Gu0Uk8KdpVpdnunJgn6GKX3Tny3p2oCiiigKKKKAooooCiiigKKKKAooooCo2o38UEbSzOqRqMlmOAKg8UcRwWMJmnfAHQeLHyArN9O0G612Vbq/5orJTmG2Gxb9pvn5/d6h0vOLb7V5Gt9LUxW4OJLphj+r/AHzTRwj2c2ll+cI76c/FLJuc+melWVxqlvZhLS3RTJj83AmB08/AfXc1mercT3sjJcAM0iyssduOZUJQEsDggtgeJ29KBu410+ZnZIhKykF+QyckbEDPKMe8x2zyjzqk0iO3uoZbUSyyFo+ZCMiONypPdqB0cY3B860iSFLq3Uk7MoZXU7qcZDKfSkjTIraLUESbUInkUkxwoqplj1Z+X4nx/bQKlqoM0crtJ7JFEY5XVeVoXZc4yoy2COX5tWodnvf/AJPhNyW5yC3v/EFJJUN6hcUwlAAcAb/ifWsO4J0K41oTT3V/cKVlKNEjFQOhwADjG/4UDLdcKWttJLO2o4d5lkxLIMAK3Ny9enXFMGix2l8t2nPBcwPMG5VIYDZeo8DkE1VWPY1pqburynzZuvzqo4Z0+Ow4ikt4h3cU1tlUHTIKkfhzffQMeqcMtHHdqr5jnSNQzt+iCBgck9QARio0bQXcl2Ir2Je9hjiR45BkcoOT18zX3tvu+XTGjDcrTSJGPXLZI/qg1HTsf02SFOaNkfkGWVvHG5xQS+EeE5bWYIZjKiwPyTHqHkfL/XYH7qTNa0G4WQLcyXU88fNIWQcyuCcJhfDc4I9PWrm+7M5rVGltdTuIxGhblZiRsM9M4/CmHsi1ia809Li4PNLzMnPjBZQRgnG3/wAUFpIBaaezriApFznbIVsAkY9Ttj1pJ0a0s7ZVW97u2uyokW57z3izHxOcggke6diKdeL5IiYI5Z440MoZldsFwu4A/pY+6lHjXgW0SYakpJk70MYzhxOz4VYwDsAxIHoPlQX+t8G2mpRAzIonXYyxbEN6EeHQ49aUl1XUdCYLdc13YZwJhu0fz/v4VPe1uNNNvFAGwqAzSu2UkbGMEE5Bzj3h0pr4e4ot75TE3KJMYeJsEHzx4MKC00HXILyITW8gdD5dQfIjwNWNZPxBwXcaZM1/pBPL1mtfsuPHA/s8R+FOnBXGMGoxc0Z5ZF2kib4kPy8qBkooooCiiigKKKKAooooCqnifX4bG3e4mbCqNh4sfAD1NWF7dpFG8sjBURSzMegA3JrINOP5bvPbbo93p0DYgRzgSN5nPX+4oJvCvD82qzjUtQUiEHNvbnoB4Mwpp4m4lKc0NspPd47+VBkQKfTxYDflHQbmufGvFUduscEbhTKQpdSCYlI/VznmPRdsb0mNpzzZttOhezuVkWaR7hvfkiORzqQWB97HMp/WFBZXvDcsl3G8EbPCsXPHcCQe/K322OcnAwAOm5q31K5t7VI9Q1BTFLFlQgOVZiMFlA8SPGr3huxitS1utyHY+93TMpZSepUdQpPhjAqn7XOG3u7Lmi/TW7d7H646jH9+lAqWc2paqCtohsbBiT3h2Zwdzyeh67bb1P1/smt47F/Zgfak/OLKTliy7039nnEyahZRzDCuvuSp+q69dvI9R6EUy0GaaF2s2gso5Lp+WcDleMD3uZdjtVd2IXDPcag6xSJbzS97EWUgHmZtgeh2xV3qljoemyyXM4hWZ2LYb3mz191N8fdVW/ancXB5NM02aXydxyr8/L6E0Gq0h8c8Ave3UV1DctbvGhXmXqc+vy2qoS14luCC0tvaqeoUcxH0wf7aDwBq7HL6y/yRSP30Hh+yq5eSIz6hJNHHIr8jjO4/fjP31qqjAx5Vln+D3VlIKazJ/SBP+9XptM4kgOY7q3uVHg45Sfw/fQNnaVctHpl2yAlu6IGBk77Up9k/GFhFpsMBnVZI0JdW2OSSxx5+X0rn/hLvrU8upaZIo8ZIveX5nqMfWpIttB1r4e7Ex8B+bl+7xP30FPw/w+uuz3N9dhu4OY7ddxgD7Qr3dabqWjlWUG+sUYMEO7xYyAQOuBn6Vquj6ZHbQpBEMIigAVJnlVVZmICqCWJ6ADck+lBmVxf2usd1c2bZu4yoCMfgVj7xZfEAZ3r5a8NG0QwYU3EsmbcISSmPilP6o8/A5x41F7NbYXuqXOqxoIrcZjiAXl7zzYjz8fqK0+DTY1mefGZHABY+AHQDyHpQR9PY28UUdzKGkZuUOdudjzNj54B29KSOOuD5YJfynpvuzpvLENhKPHbzr32kXE8oeGWxla3jkSVblHUd2FwSwyc8w98dOhpk4P1Z3j5ZtgT+YdyA8yeDFOoI8foaD1wPxbFqMAkT3XXaSM9UbyIpjrKOOtGk0y5Gr2KnkJxdQr0ZT9rH98Vo+gazFd28dxA3NHIMjzHmD5EHYj0oLCiiigKKKKAooqh424hWxs5bhjuBhB5selAjdo9/JqN5Ho1sxCkhrpx9lRvg/wAPPFdUmS0uJbcoEZTHDZBx7nKVHM/lzc2cn0FWPZPoRtrV7y5/T3OZZWbqq7kA/Ib1At9TNzcyMtu1xE8IcJKQG7tid4/n5HfpQc9P4PvH1Sdpn/kxCliUXlm2IKjxGNumK68WXMWkMJkd57uSI29rEdyqlgxz4kAhdz5AVe6HeSRxyyRM0kEaMe5lUiWNlGeT1FKnZRaLqNxLqtzIsk4YqkP/AGIHTbz8vnQcbXsquGg9ra4ddSZu8587A9eQ+lH+EnUOT2H2Rvyjnk6e5j9f5VsdUnEurWtlG13PygqOUHA5m/ZFAs8C8Mpo8E1xd3A55fflycIvU7Dz3O9VN1xff6o7Q6XGYoc4a6cY/q1BtdOm1cnUNTYwafH70UGccyj7TelOacYWttFGqW8qKw/MxiPBfywvXB8zQQuHeyy0hPe3JNzOd2eQ5GfkauNS4wsbT82rBmGB3cQzjOwzjYZ6ZNI/EmrXl5arcc7RwSPy8kXVMMByyEHPMT7vkCan8IaPFPFeWSKyRJcF45OX41J5ipP2gr8y/JRQTL3ju6Kd5FaBE75YS0r4KsxC7qPDJqm4i42vreS4iee3Dwxq4CIx5s5yN+mAOvrTZacFsI7mKWYus7rIDjBVhjp6bCpfGGhiS0nEcYMskQiZwBzFCQGx5kLzEDzoFrWuI7y0A5rlJHaLveUQscL68vQZ2+hqVHxffRR27zQRSe0Y5VjfDbjPwt1+dX2l6Y00fNMhjJRogPtGLovN+1tzema86lwXbTJCHXmeCMpG2cEbY6j6GgiaZ2gWc4Cy5hLMVxMuFLAkFQx90nIO2fCo3EXZpYXg7yNRDId1liON/PaqnWeE7gWllZKkbAZDSNk8kjBstjxBBbr44qul1KaynaO0gnjxN3Ucb7wzEY6Z+Dbfbag7Lrmp6MQt6pu7TOBOu7KP2qbNb5NY02RLO5CiVccw3+asOoz0P1rpb8TCZJIZIOW6VTm2kx+c/mE7MDSTqnDc9jjVNJDBGAea0PQjqcDzHlQHCHGi6VGdP1GLuGhUlHUe7KPT1NeTFqmtF50keztkBMCg4aRvAn0ps0m50/XIY5XjVniYEo3xIw8D6U6RoFAAAAGwA8KDMODdaOoMtnfsVuLQkyQnYTkcvI58wu5K+bA1LgsmuSl5LIiS+/3cePCNmClSemfHzyK9dp/CbsV1Gz9y7t9zjbvFHVT64z99Rre6tNTsLe5NvI0gzEkcZK4Y45hkdF6HNA08J64t/bESpyyY5ZY2Hn4+qsNwaROH3bRNTaykJ9hu25oGPRGP2fTy+4120y89mkRo3a4lgUJcCM+5HEN+Uk7u69fPY02doPDyalYEIQXA7yFx5gZGD5H99A20Um9lnExvbNe8/Tw/m5QeuV2yacqAooooCsp4y/6z1eDTxvBb4ln8ieoU/wAD4GtN1G7WGJ5WOAilj9BWe9i9m0kdxqEnx3UrEE/qg7D5UGjT2yujRsPcZSpHoRjH3UvcN8FQWbRvG0jNHGYwXbOQTnfw28MYrtHxrYG49mFzH3uccufHyz0zXzj3XfYrGefPvBcJ6sdl/GgvwR6VkHabog0t11axlWFy4WSA/DNzfqjxPUkeQJ2xvz0HgPUfZ47uC/lS5kXndHJKknfodq+22h6nqGpWy6nEFhtlZ8r8EhyAPqdvoDQaRpWv81it3cp3H5vndWPw/wDz++s90Cwk127N9cqRYxNi3iPSQj7RHlUnj66fUb6LSICREmHuWXyHRP7+labp9kkMaRRqFRAAAPSgia/pgntZYAqnmQqoJwPTp0GcUgaTobiSW0vZM3cgUx3W+HRcZRRty46EDBIOa0PXNVS2t5Z3PuxqWP8AD60m9n+uzzGdb5AJUxPGMAlY3GVA+Q2oLvhbhP2Tvg0verM3M0ZUBFP7K74HTY533pjiiVQFUAAdABgCsj1vjW+mtnuYZY7eMsUgjA5pZWB5Rt4ZNaNwhaXEdpEt1IZJyOaRjjqd8beA6fSguaruIdVFrbyXDKWWMczAdcZGfuG/0qxpf4zPNFHB4zzImPQHnb6cit99Bd2twsiLIhyrAEEeINdaXdDf2e4ksz8BBlg/mk++n9BjnHk48qYqANI1jBcvqEYnWRlt1YKSnuE7gSiQHBZlwCmMg5pm4mtJpbaVLeQxzcpMbjwYbj6eFZfofGl/Dam4nljmEJ5bmFxyyxkHBx5+fSgmatw7dT3MUInk53YyyO6jNuAx5e6YAYJ2HKc7b+labpdoYoY4mbnKKFLEY5sDr9aTe0LX7hI7YWS5nmIkH8xBzkH5jb600cN6yl3bRXC7CRc4PUHxHzBz91BnvHOhS6bcflawX3c/ymFejL4sB/b99aJoOtxXdulxEcoy59R5j5ip8sYZSrDIIwQfGso0Rjo2qm0YkWd2eaInoj+XoDQRb/WbrXrqSytS1vZwkd/IdnbJIAx1GcHA9N61Dh/QobK3W3gXCKOniSepJ8zWZ8ZK+j6rHqMEbPBdApNGni3Xp5nqP5rVIl1zXb4Fra3W0iAJDSfEcb9KC7/weLJcLcc3s3K/N3cO3NvuJGz73N4jHjTjpOnJbxLDHnkXPKD4AkkAegzgegFLfZhxM99aEzY7+JzHKB5jofqMGrLVeMrG3mEE1wiSH7JPTPn5UCNOv5K11XHu21/sfALJ/wAz+JrV6RO1/SvaNOaWPd4cSxsPTfIph4M1gXdlBOPtoM/PofxoLqiiigQu2nUjFprxqffnZYlGevMd/wAKvtJ0Yw6alrH7rCDlB8mK/wAaT+04d/qel2mxXvDK4/m4A/f91afQfkKHgrUTdCAW8ol5/jKkKDn4ufpjxzmtn7Ri13e6fpYbmwRLOR5L4n57mtWxWccYcHXwvTqOnTIJSgVo5BsQPInpmg0WNAoCjYAYFVvFGsJZ2k1y52jQn5noAPUnA+tI/D/aPci6jsdQs2inkOFZPhPrjy+Vcu2y4aY2OmoTm5nBcD9VMbH6nP8AQoJvY3ozLbvfTbz3bFyT4LnYfL/lWgXMwRGduigk/Ib15s7dY41jUYVFCgegGKQuJONAl9LZSofZTGqSTL/k2kyBzelArafLcXkrC6dlt9WD9wB1iMRwnXb3lHN64pal4rlhe4WWRxcZMM0oTZUjJAVMbczbnJ6ZqfxZNd6bJa28swkSCMtZMqYBJyg5z5xpg/0hXrQ7yYac57+yjhZmDrKheWZj1Jxvlj0FBOsNTh01oZZdJZS2O7bvUdyT48gYnmPXIFbVp913saScjJzAHkcYYZ8CATvWc9kfCxSP2m5tY0kP6MnJcL54b4flVR2s9qxgZrOyYd4NpJR9n9lfX18KDQ+JuNrGxH8onUN/2a+833Dp9cVS8H8RJq1ybqNHWG2UonNj3nfBJx4YUAf0zX5duLhpGLuxZiclmOSa/V3ZRonsumwIRhnHO3zbegs+LYSI1uEGZLdu8UDqR0ZfqufwqBwz2iafekLFMFkP+Tk91vpnY/fTU6ggg9DtX5C4/wBKNnqM8S5AD8ykHwbcUH65vJ+RGflZ+UE8q/EceAyRvWLajq0GpyzPFpDSOo5ZS0iI+3mhYNkeoqB2V9rToy2t85aMkBJj1XwAbzX18Kdu1jhgyw+021tHLMu7EZDlfTl+L5UGani6Vu5SJ5DPGwjtnK/rnl7uQnbbbcUyaqtzZssVm5ZNLUXFwT/lWkPvLgbYCFzVZqd3L+S9pbJ4FwO5RCk0TDpjO/ODXnhie81Cae3hmCtPBy3juuVwv5sMh83U/gaDe7C7WWJJU+F1DD6jNKvarw97XYuU/TQ/nYiOuV3x9aqOHeL1W8t9PgXNoiNEJyP0kiDop8hvmtIYZGDQLHZ9ri6hYQzMAXHuuCOjrsfl5/I00VlPZqfY9X1HTicI5E8Q8PI4+YZf6lMvFvaNaWEncOJHmwCI0UkkHpv0oFzh4+wa/cWx2iu1EkflzDqB69furJuO+EL9dRnDQSymSVmR1UsGDEkbgYG2Bg9MVos0t9q9/Zzx2TW0dvJzd8/UrnJX6jI+tbPigXeD9Ikj0yG2ud37rlfxxkHb6Uq9ikxjW7sW2a2nYAZyeVtxWm1l+kj2fiW4jwAtzBz/ADZcfxP3UGoUUUUGX3C97xQv/gWo+8lj+8U9arxJa27ck06I+M8pO5+lIfD4zxPfk/ZijA+scZrh2h3sBveQ2pSdVAW7kkES79AGbZvlQaJo/EENyrvGWCxn3mdSo6ZyM9RjxpXfte0oEjvnOCRkRMQceRxuK+xx3a6Nee1yxSP7PNytEcjl7tsZOBk+tQ+xzSYJNKgZ4kY5bcqCetBTaJrUOp8QxzQlmjgt2KkqR72w6H0Jqddj2nimJTutrbl/kTt/tMK0az0mCJi0cSIxGCVGKzrg2Pm4j1OT9SIIP6TIf92g1Ksn4olW0udR9qt5JILqJSrovMMgMCDjpjY5ph7UpblY7VrabuW9oVS+MjDAruPLJFeNN4okV2stThVZSjGOQbxzqAc8p8Gx1U0GbcNcQu0sDyILiWCJLS3iZhgyOC7OxPkoAJ/Zq6u7e7S8iC21l7VKd1RS3djxZj02/GqXR7CxFnGFt5JdQuXkkiSI4dFEjKrE9ETAG5671d9mug3lvqjJcShmEXeS4JbHNkKrP4kYJwNulA39qvFLWGnkq35+QciEeBI3YfKvyu7Ekkkknck+Nav/APUTqZe9jgztHHnHq3/KsmoJ+gWve3MMf68ij7yK/ZTERQk7AIn0GBX434dvBDdQSnokisfkCK/UPaZq3Jo1zNGc88QVSP8AxCFyPoaBh0DU1ubaG4XpLGrj6jNYF/8AUTZhb+KQdZIt/wCif+daf2H3Zk0iDJyUZ0+5jj8CKyPt51pLjUeRCCsKcpI/WO5H02oM2r9I9hfFbXVo1tI2ZYBhWO5K+Hzx0r83U+9iepmHVIhnAlBQjzz0oH8291Jfyo9vZe0xnMfOpHer4MD0z51U8ScQyxzyOka21w8b2k8asOXmZeaORSPDO2f2quu1TQ7u41KFIJQheMtFzHHvJ1VWG4JG/ltVDrGl2rWNzHLbyRalbgSt3zZaRVZeZlboy8uRt0oGDhaRbt9KS1gkjitR3kjuuFzylcA+OSSc+lbDSHd8UPiGz06FXnaJGY9I4FIGC58/IV67MJrljei6l71kn5Qw2GyrnlHgM5oKXi0ez8R6fONhPG0bHzxkf2Fa+dp7rb6rply3KFJZHZumNiP3197ZkIu9IlH2bhl/rGL+Bp84i4Ytb0KLmISBN1z4ZoPEfFticYuof6wq4MmV5lIO2QfA1mnGHZrpsNlcSpbhXSNmU5OxFXfY7Mz6PaFiWPK4yfISOB9wAH0oK/hTiN5Zk769BdmZTbJHspBIwW9MdahcaqItf0ub9fmT71Zf7TXi01CQXuA8ouPaCpt+4Ij7vmOG5+XHw4bmz12r72tDGoaOw6+1IPvdaDUqKKKDLeHW/wD9PqI844//AEoq79oGt3aTMqtGIl5R3TwGTvMgnr6n3duma5wgRcUSZ/y1spH093/dqz40hvnuBHAH7tk2ZOX3eUEnc/aJwBQTtd06K30e8WGJYVNrMxRdgCY2Jx5b1X9jEyLpMALqD722R502abGZbRFn5XLxcsmNwcjDD5daR37GbPJ5JrhF8FWQ4FBo6SqejA/I1mXAzcuv6qnmit9xH8agcDacbDXJrPvJHja35kMjZ6EfxqXZjuOKpB4XFqcfP3W/3KB44y0T2y1eEEK+zIT4MpDKfvArM+N5tUmgi9oseRLckvLG/Mx90rlRgYU+NMHafZTRz290lzLDDnu5ih+HPwvg7YzsfmPKvmqX9/YRM1y6XdmylTKo5XQMMAkdGG+5GPlQIfBt9e6dbtqS2iPDLFHGpeTDe4oXKjHRmyeX1ps7Hp7n2u8N4vLNOqz4PXlbIH0AGAPSlzhbVImOlpeMBaQrPylj7pmSVgoYekZUj+dTVwtxTb3OvXPdNzAwJGjDo3IWJx/W/CgRu1PRvadf7gtyCRFw3KT0Vj0G56VwXsmTxvG/8vJ/Cmntzt5La6s9Si6xsAfmDkA+hGR9atbDjHXJo0lj06JkdQysJOoNAg/4KY/87k/8u9XGqadcxaZJYi4E8bAcqyRujJykN7rHYjbHKabf+kfEH/dsf+sFStL1nV3cJeaahhbZirgkeuD1oEnhCK+XT1tUuBapgk8kTSSsWOSSRsvljyFU79liEkm7lJO5Jt33rU9W1TU4ZDHY6aphXYMzheb1wPD51C/6Ra//AN2xf6ygzluyZPC8b628n8Kg6Dw77HrdnCsne+8rk8pXHxDGDv4fjWptxHr43OmxADqTKNqUuy+SXU9am1CVcd2vQHKg4CgD7s/U0DP2zNcmWzFmMzRs0o8/cH9wR4g0o8V6jfanai9azRI7eOZXZH9/3o3RsgjIVSclfLNOXHHFMFtrFkJDgKrB28FD9M/UUr8WazCsmqexuGt5rRRLy/CJndYxj1KFif5tBI7PZ9ShilktrHvUnC8ryPyMCFC5PXK1p/BOiNaWyxyMGlZi8hHQsxycZ8KUdDv7++gRbRktbWJQnfMMu5QAMVXoBkHc/dXrs5sZpLy4uGupp4Iz3cZfADt9pgBtgdB9aDh20y/n9KTxa5JH05Af7RWpVlfaGO/1zSbfr3fPIfkSP+CuvaTeXcmpWdlaXBgZ0cucZHVcEj6Ggbe0P/Fl3/oWqi7OIQdBtwGdMRs2Y/i2kdjj1P76qbvs51WVGjk1YMjjDDujuP61aDw9o62dpFbRksIk5QT1J6kn5nJ+tBn+ia3HLPG6T6hzPMfzLD3MczdSV2UDwz6V67XG/l2kDx9rj/8AUSvfD11ei8iSR5QGJZojEAoGWyAwHQHHqc0doIEutaTF4q5f+rlv3UGn0UUUGX8dAQa7ptzj9IrQk/XI/wBo0569oDXMiEzyRxKpykbFSx8yR4Uq9uNofY47lc81tMsm3lnB/CnBteiSzF45PdiMOxUZwMDOw60BwvoCWUAhjZ2GScucnc5/5fSkviTjq9a9lsNNthJJEB3kjnZcgHYeW4rvddo8vPlbNkgRojK8zhWCSOE51QZJHU746VX8WfyDXLS8G0V0O5l8s+B9T/Cg7cN8D6g19HqF9dJ3iAju4xnYgjlJ6Y/hXDtaBtb/AEzUR8Ky90/9Lcfhz/dWq0s9o2ge3afPAPjxzxnyddx9/T5E0FxqiQyQlJivdSDB5iACD86QJeBJJlNr+Uy1j4RDBceS82fhH3174T7vWdH9nnyJYx3bn7SOvRv7+tUnD/DlirGyvUa2u0+GVJXQTL4OhzjPmvhQVUOjxaZcX6T5uHhiEtoJMcrd6ArNy9ObmABP7NX0vDyabbadP/lROrSsNuYy7MD+yM9PSkrjWYJPLBJM10tsQEkHxvHIAXiLDbKHDA+nrVpqujXl1ZWCT3rN7Q6rFEANhucsw6lUBNBq+sWltrFjJGjhkfKq4+y6kjP0NZb2f6/e2kx0i5uFtmjOIjIgYNknYMfA9QaceGIo9KvZ7PPLbND7Qmfs8u0n06H6mpGtaBZa/Zx3EZ5XI/Nyge8pHVW+vhQXa2t9430X0iX+NffZLz/P4/8AVLWX2oudLIi1CxNzCOlxEzFseZGd/wAKlHtH0RTvbTgjwIb/AIqDRvZbz/P4/wDVJXT2S6/z9f8AVJWcjtP0U/8A4033H/irxe61Jf8A5rS9PZQww083MoX5DP40HXtO4tuIv+r7e59ouJ/cZEjUFQwxsV+0fwFNfBGiQ6Lpw791Vjhpn8OY7YHoOlVnDXB9rolvJfXT97OqkvId8fspnfJO2eprrxRJHqtzaWatzW7x+0y4PVeiD5E5P9CggRcOx6ouqOxDM8nLC22V5FHLg+ROT9aV7jSotSbToovzM8wb2oxj3QsGfeI6Z5umf1q6aPoF7aw6lHa3rRvAzc0bDIZcZVlY9Dy7fMVQ8HXIaaKOKZrb2pjG0pHvRxqC/KGIwGkYdfl5UGlRcCSwL7MmqMlmcl0blD79QG8Af30/aJbwRRLFble7QYAUg/fjxrK+IuHrAYtLRHu7yT7UkrsIweruQQNvAeNNEsEOhaS/Kcsq/EeryNt/b/ZQUnCx9t4jvLkbx2sQiU/tNsPwEleOMtK1OHVfynb26XEaxhFTPvADJO3zJ6Uwdj2hNbWAeQfnrljNJnr73QfQfiTTzQIfCnadBdTLbTRSW1w2wSQbMR5H91NuuuRbylXVG5CFdjgAkYBJ8N6zi4Ht/EShf0VimWI8XPgfv/CmLiziaI89qnctLzYMVzlUkA68pIwfDfcUHHg17iSSImCWGOKIqxeRXEhJzlSNzvk58jVSwFxxOu21rbk59W2/sY/dV5wBpRhE0zQJbq+MRpKZFAHUgnAAPkB4VR9kame61G/OcSTci/Jc9KDUKKKKCs4m0wXNrNAejoR+G1JXZHci50x7ObdoS0Dr6bitIrKQfyZrxztb3428lkH8f7TQQbtLaC4ZbtZbtIiA07YVUWIqeXGff5chj8qcO1rQ2utPfuxmWIiWPHXK74HzG1ReOtAJbvIYYPePPJPcSHu4ivRu76MxH0OBmrvgXWGubcl27wxuU74LyrNj7ag/Z8Pp40CNY9p91NFHFaWEskwQB2cEKCNq78LcV6hFqgtNU5FFxFmIL0DA5xn1GQfUCtRWNVBIAUdT4VjHaPqY1a7gtNNj7ye3k52uhssY6Fc+WcEnzXbO9BY3h/I2sd70s744byST/n1++rXtS1LkEYksY7iF8ASs2AhPTJ8B60ya9w0L2x9muWDOUGZAMYcD4h5b0ncB60cyaLqigyoOVC/SZPDr4gUHrSo7y2h5U0m3aEjOI5AS2fHcbmkWbWHtjFLCD7PbzM8aSbGNtw8LeXU8tM3FGo3WgMkdpN38Ep/NwTox7vJ6LICAQD0UnOPOlqPQJp1d7yx1F2mcySCJo1jyenKpBJwPHNBbcYJfX8lpJLELZLgiBVDZcq5DOT5YUdPSmG5u10S7nVR/Jp4GmiTwWWJfeUfzxvjzpNfiacpHE7MrWkweCaZMYxt3VwBnlyNucbHPhUjjKW91Szi1CeOOC2iKFFUlmk53VGYnwXGaDU+COJ1v4cSpyTqB3sTDzGcgfqmrC84UspSS9tGSfHlFK3Glv7L7LqUGzRlI5QOkkTYG/mV6j5etaBG+QD5jNBSWvB9jHuttECP2a4cXcQx2EHuJzStkRRKN2OPLyFMbHAz5Ug8GQC9nudSmOQHeCFT0jRCVY/NjvnyxQVVvqX5auLSFgO5iiW4uU8DIdljPoDk/SqHhi0vbG9vHgjFwtqTD3ZbDCMkyoV+Qb8a4cKC806K61O2SOa2d5BIjEqyiN2AZSOo9KhrxbOomKHMt7IDNPEpYIOUARQg/G4UYLHYY8d6Dwdfku2nmm9yCdk71Y+pA2WEebMevzp5vkvLiDkOkwLBj4ZXAIA6E4G21IkvDcsaK1rZakjRuJI+8aJkLKc5ZAM7/ADpk4Z1e8113t7mUW8Uf6WKBGBkx9lpCSFB8QDn5UF92W3/O8kcVhHBFGSHmVshm8gftepqu4klOr6rHZRnNranvJ2HQsOi/39as+POIFsYY9N06Me0yjkjRR+jXoWPr8/nVxwbwwdNsmWNe9uWUu5zgu+M4z5Z2oKvjXtBayuorS2tzcMIy8iJ1UDHLjHpk/dX217WbGSKQlmilRSe6kGDkDpS12PXkRvrx70lNSkbHJIMYTqQh8TnGfRVx41pescJWV0Q09tE5HQlRn76BF7NH9l0641OYEyXDtIF8WGcIo/neHzqx4gDzTvLGIJDHEkM8M3wxs/vjlbHXDAEegpy1LQoJ4PZ5Ix3WAAoyuMdMEYII9KU9P7PpIZgFu2kszL3zwyAFy4A5fznUqCBsR9kbmg9cUT/kvRWXI51i5BjoWbbb0qx7MNF9k06CMjDFed/m25pV45f8o6tbacm8cJE0+PTcKfD6etaoqgAAdBQfaKKKApM7VeGzeWTGPaaH85GR1yu+1OdFBnel8Uw3ukxzXEQl5ZIo5oz0VudV5m/ZGeb5Cq/hzXJhLGRO8rd4VngRQIYFGRgH9nbfxqDrEQ0XU+8Kg6dfHllUjKox8cdMePyz5UzcY8Pt3cb2a5RQR3UbcgJbGHJHUDqQfCgv+MbB7uwnigfDyRkIwP16jz6fWlHsUv7cQPZiIQ3UJxMh+J8fb8yP7KkcGX9zyx20PJIqNmefGIx5pEPH59BXHtK4WlWRdVsNrqHeRB/lU8R6kfj91BpNJ3aBwal+gaNu7uod45F6g9cH0pbu+1nvoYo7CIyXkwwUxtEehLVWtpGr6WRf96brn3uYfIfs/IUFrw9xKl2H0vWIwlyu2W2Enkynwb5VOdNR0tTyOl3aDp3rcsiDy5ujCuk1nYcQWglTKyLsJBs8TdcE/jSxc65dabiy1aIXdrIeWOUDLH0I8TQUMkg1Ka4uJI7nMmF7i2XKsq5+JzgZznpXue4urIC2FtN7FP8AmzBckEDmH2HGeU58D41oNvwldWYD6XOBE3vezTjKjO+Fbqv44qLrVlqepqlrcW0dvD3itLIH5iQpBwm3j50CdwtcR3N2bO8vJRbwBGSCYgZcH4CR1C7H1reYmUgcpBHhiqCLgfT1jaP2aMq3xZGSfUnrmlnVLJ9GkS5gd2smcJPC7Fu7DHAdCdwASMjpQaNIwAySAPWsL4yuYrS8FvZ3sohuSzSwQkEhj4L5c2+abrGB9amllkkdbCNzHFGhK98V2Z2I35c7AUzNwPp5jEfssfKDkbbg+eeuaDHrae6ugbJbeb2KD3DDbkZY9fzkhIyT1IHjXPA054J44rpTCxxBcKOTDbEq65HN86fNK07UdLMtvaW0dxA8hkjZn5SvN9ltt9/GpkvCd5f/AOMp1WHP/wBtCMA+jN1P0xQcYZNS1RdmS0tW+Jo25pGHkD0WuXEPEdvpMK2OnRCS6fZI13OT9uQ9SfGqm54jnllfStHgFuIvdkkYY5B0yB++rrT9GsdCga6uZO8uG+KV93dv1UFBL7PeCWty13eN3t7LuzHfkz9kU91i73WuXv8A1lCO5jj3itj1kXxz6kU16T2oWr2b3Ep7uWIYkhPxc3kB6mgqu3Cxs1gSdiUvQcW7R/GzeR8x608cHPcGygN1+m5Bz/P19cUh8DaDNf3P5X1AYHS2hboo8GIPj5ff5Uy8dcSwxo9r3rRSOuO9VciPm2Xm8s/uoPl1xxFHexxGSMwyfm85wySA+OfskbZ9KveJ9bjs7WW4kOyKSPU+AHzNUfD+nLdWzR3dtHkDkEqkESLjZ1PUfxpO1pjq+ox6dCSbKzwZ3znnZdsZ8fL55oLzse0WQRSX9x+nu2L7+C52HyrRq8QxBVCqMKowAPACvdAUUUUBRRRQVPFOgRX1tJbSj3XGzeKnwYeoO9InZxrsttK2j6gR3ke0LnpInkM9dun3VqNKHaJwYt/EGQ93cxe9DKOoI8D6GgabW2SNQkaqijoqjAFKt1xoxklW2tJLiKEkSyqVABHVUz8ZHj4fWoPZ7xo05ayvR3d7FswO3eAfaWukcE+mxTBljkskEshO4kw2W5cdCck7+VAw6Bp9ngXVtDGvfKG51UAsDvSz2tcRPFCllb73V2eRB5Kdi39/WrLhfWWRktZYUgxCJI1R+YKgOMN5Hp+NcePeCfbzFcQzNDcwg91Ip233/uaCx4M4ei02ySEEe6OaWQ7czHdmPp4DyAFI3DqHWtTa+cH2O1PLbqejsPt+vn91VWu6trUiLpM8X52ZgvtKbBk8c42B8+m1a5w1okdnbR28Q91FxnzPiT8zQdtb1RLW3kuJM8kSlmx1wPKk3iTii4eaG1t2Nu7zKjuyBzhgTsObqMeNXHaf/im9/wBC1J+rf41h/wD2o/8AZagaRwren4tWn/oxxj9xqq4p4Pv3tJ411EzK0ZDRzxLuMZ2ZSMN0wcGtB71f1h99cbxwY5MEH3G/sNBnHZ9w1fnT7b+X9xGYwyRwxDIDe97zMTlt/AUw/wDRS9HTVrjP7UcZ/cKseB2A06zyQPzEf+yKu+9X9YffQIumcQXFtdTWtxIbrlZAjhVQ+8gbf3sHc4ps0HV1uoe9RWUczKQ3UFGKnp6g1n2rsPytL/pYf9iOm3s9/wDsx/pp/wD15aBQ7SrJ9Pu4dYtwcAhLlB9pD4/P+Aq87QOH01fTg8BBkAEtu3mcZ5fkw2+eKbtUsEnieGQZR1KkfOsY0TVdU04zaTbwGZ1fMMrZ5URt8nz8cUD/ANl/FPttoA45Z4fzcqYwQRtnHhmums9nGn3NytzLEecEEhThXI6c48fwqL2c8HTWbTXFzL3lxcEF8AAD6DbNWvEPFKwF0EcjlF5pGQZEQPRiPHz28qCL2iSRixePOPejXKMV7nLACQ8uSAvXpjbfalvTtInu5DDLKBNBy811GgZLhCpADAn3ZACfOvegaI878zZW6QgyTEZju4pCT7w6HbO32SPKrXi7iO30mEQ20S9/KcRQoOrHbJA8KCD2g8Qm0ii0zT1BupQERV/ya9OY+W1MPZ/wkmnWqxA80re9LJ+sx6/QdB8vWqjs44NeAte3h7y9m3Yn7AP2V8qfaAooooCiiigKKKKAooooEzj7gZb0LNC3c3ce8cq7Z9G8xVPwnxv3rNpuqoIrkDkPNskoO2R4b1pdLfGnBdtqMYWZeWRf0cq7Mh+fiPQ+VBScScJpDGvs6SGN3HtJDFpDGoJCqWOeXONh4ZrjpHFtyJMGHKMpkEXwtBCowpYn7THfBqnsuIb/AEVxBqIa4tM4S5UZKjyb0+flTq1pZ6jBI1vIo78KJJI8czKPsk9QMZH1oLrS9RiuIoZ0xiVA6Z64Iz/ZU0MOmd6ze44d/lc/fRSDdfZbiP4beKNF2Hgp5g2fPNc9Hv5rq5icHuzPI0hKZB7iMlUDfzzvv5kUDZ2hWjy6bdxRqWd4iFUdST4Ul6jE73DTewzyjmDKD7vKwBGfi361qjMAMk4A8TUd7+IRtLzr3agktnYAdd6DOfyhceGlN8yoP/uVA1XVZxiM24tXkVu7ZiYwxHUcwdhzb5wRg4NatY3iTIskZ5kbofOoPEGiWt9GYLhFkUYbGcFTvggjcHrvQZfw/eTokVsYkuJkjHMqsZOVVwvMfeVVyTso8jVwb24HXSifkoH/ALlN3CnC1lYhhaIFL7s3NzMwHqSTgVd3FyiY52C5IAyepPQfOgytoJWmSX2CaIiRWYj3ublIx9rbAGKeOAoHSzUSIyMZJm5W6gNLIwz9CKvpZVUFmIAHUk7VWXvEdtE0StIC0xxGF35vljyoLOaVVUsxAUDJJ6AVSWXFNnKJpEkGIU5pGKke6ATzZI3XAO9WOtaatzBJA5IWRSpI6jNZfpVpdSTwwJPdTR8zRXUc8QWPueUqQdt2Ph86C81ri/2iJlgWVeRkM3Ju/dN1KFc74wSOuPCvem8P+1c8kclxCpXui7dZ48dWDDIIyRnrVho/Dlvpo7x7gmONSqd5gBFJyRkfEfDJ3pW1bje71KQ2mjoQnR7sjAUfs/xoLjjDjaLT0SytF766ICRxLvy+A5vl1xXzgTgZ45DfX7d9ePvvuI/RfWp/AvZ/Bp+ZSTNdP8c77nzIXyH4nApxoCiiigKKKKAooooCiiigKKKKAooooOV1bJIpSRQynYqwyDWbat2ZyQSG40mdreTqYs5Rvoa06igy2y7S5rZhDq9q0R6d8gzG3QZ9KdtCu7Gdu/tmiZ2QLlTvyjJAx4DrVpe2UcqlJEV1PgwzSFq3ZHasxktZJLWTzjY4+6gZuOdMlubN4ojuSpIzjnUMCy58OYZFJeu6BO1rfYhaNLiSFI4EPwqCqu5A2GQTkdMKK+fk7iGy/RTRXiDor7N+P8a+/wCE+8gyLzSrhMdWRSy/f0/Gg0uwtRFGkYJIRQoJ67UgM1ydU1EwFMCCENz58BL0x4/8q82vbXprD3jIh8ipqZD2o6QSzd8oLfESu5+dAs8LalJBBamJFaQ6Y7gkEsSHzjr03z0zXzVdSmnEkZuGnCwxTrhQCrB/ext1Apik7RdFC4EyDCFByrghT4DyFLml8eaNaO0iSzzPy8g5lzheuBt+NBa32i3kgubeNpWjWS3niMhzzDZnTPjuOh238qtNB4QkVYmJ7torlpVBOTyvnmG2y5znA2FVH+FeabHsemXEuejFSF+8DA++jk4jvOvdWSE+eWx9M/20Gj6jqkMClppEQD9YgUgap2qCRzDplu91L05gMIOnU0ad2RQswe+uJbp+uGYhfup+0zSYLdAkMSRqPBRigzey7Pbu+cTavcFh1FvGcIPQ1pWmabFbxiOGNY0HQKMVLooCiiigKKKKAooooCiiigKKKKAooooCiiigKKKKAooooCvMnSiigzftL+H6V+d9b/SffRRQcNN+MVvfZf4V9ooNZh6V0oooCiiigKKKKAooooCiiigKKKKAooooP//Z" alt="High school students studying in a classroom with laptops and textbooks" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center">Higher Secondary (XI-XII)</h3>
+                    <p class="text-gray-700 mb-4">Rigorous academic preparation with career guidance and competitive exam support.</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>- WBBSE curriculum implementation</li>
+                        <li>- Exam preparation and career counseling</li>
+                        <li>- Co-curricular excellence programs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="holidays" class="mt-12 bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-5">
+                    <div class="md:col-span-2 bg-blue-800 text-white p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-4">School Timing & Uniform</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="mr-2">⏰</span>
+                                <span>Monday to Friday: 10:30 AM to 4:30 PM</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">👔</span>
+                                <span>White shirt, blue pants/skirt, blue tie, black shoes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">🏏</span>
+                                <span>Saturday: 10:30 AM to 2:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+      <!--  #################################################  ACADEMIC CALENDAR HOLIDAYS (REGULAR UPDATE NEED) ######################################  -->              
+                    <div class="md:col-span-3 p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-blue-800">Holiday List 2024-25</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <p class="font-bold">July 6, 2025</p>
+                                <p class="text-sm">Maharam</p>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <p class="font-bold">Aug 9, 2025</p>
+                                <p class="text-sm">Raksha Bandhan</p>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <p class="font-bold">Aug 15</p>
+                                <p class="text-sm">Independence Day</p>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <p class="font-bold">Sep 5, 2025</p>
+                                <p class="text-sm">Milad-un-Nabi</p>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <p class="font-bold">Sep 21, 2025</p>
+                                <p class="text-sm">Subho Mahalaya</p>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <p class="font-bold">Sep 26, 2025 - Oct 24, 2025</p>
+                                <p class="text-sm">Maha Panchami - Bhai Dooj</p>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+  <a href="https://wbbse.org/Files/Modelholidaylist2025.pdf" class="btn-download">
+    📄 Download Complete PDF
+  </a>
+</div>
+                    </div>
+        <!--  #################################################  ACADEMIC CALENDAR HOLIDAYS SECTION END (REGULAR UPDATE NEED) ######################################  -->              
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Our Facilities</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="facility-card bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/905194.jpg" alt="Modern science laboratory with students conducting chemistry experiments" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="facility-icon text-4xl text-blue-700 mb-4">🔬</div>
+                        <h3 class="text-xl font-bold mb-2">Science Labs</h3>
+                        <p class="text-gray-700">Well-equipped Physics, Chemistry and Biology laboratories for practical learning.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/557314.jpg" alt="School library with rows of books and students reading at tables" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="facility-icon text-4xl text-blue-700 mb-4">📚</div>
+                        <h3 class="text-xl font-bold mb-2">Library</h3>
+                        <p class="text-gray-700">5000+ books, reference materials, periodicals and digital resources.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/789457.jpg" alt="School computer lab with modern desktops and students learning coding" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="facility-icon text-4xl text-blue-700 mb-4">💻</div>
+                        <h3 class="text-xl font-bold mb-2">Computer Lab</h3>
+                        <p class="text-gray-700">State-of-the-art computer lab with high-speed internet and latest software.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c5b30f6f-b724-4b98-a50f-e21e17caf040.png" alt="Large school playground with students playing football and cricket" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="facility-icon text-4xl text-blue-700 mb-4">⚽</div>
+                        <h3 class="text-xl font-bold mb-2">Sports Complex</h3>
+                        <p class="text-gray-700">1-acre sports field with facilities for cricket, football, athletics and indoor games.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba770475-ccfe-40fe-b82d-0df44c519b22.png" alt="School auditorium with stage and seating for events and performances" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="facility-icon text-4xl text-blue-700 mb-4">🎤</div>
+                        <h3 class="text-xl font-bold mb-2">Auditorium</h3>
+                        <p class="text-gray-700">300-seat auditorium with modern audio-visual equipment for events.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/629e1795-db2b-4c89-b9c4-69f354c9a636.png" alt="School medical room with nurse attending to a student" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="facility-icon text-4xl text-blue-700 mb-4">🍽️</div>
+                        <h3 class="text-xl font-bold mb-2">School Canteen</h3>
+                        <p class="text-gray-700">Hyderabadi and nutritious meals available for students during school hours.</p>
+                    </div>
+                </div>
+            </div>
+            
+        
+        </div>
+    </section>
+
+
+
+        <!-- Admission Section -->
+<section id="admission" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 section-title">Admission Process (Classes V-XII)</h2>
+        
+        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-800">For Classes V-IX</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                            <span>Registration opens in January each year</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                            <span>Age criteria: Class V (10-11 years), Class VI (11-12 years), etc.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">3</span>
+                            <span>Admission through lottery system if applications exceed seats</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-800">For Class XI</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                            <span>Admission after Madhyamik results are declared</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                            <span>Streams available: Science and Arts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">3</span>
+                            <span>Based on merit and seat availability</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">Documents Required</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-medium mb-2">For All Classes</h4>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Birth Certificate</li>
+                            <li>Cast Certificate</li>
+                            <li>Aadhar Card</li>
+                            <li>Previous year's report card</li>
+                            <li>2 passport size photos</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium mb-2">Additional for Class XI</h4>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Madhyamik mark sheet</li>
+                            <li>Transfer Certificate</li>
+                            <li>Stream selection form</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">Important Notes</h3>
+                <ul class="list-disc list-inside pl-4 space-y-2">
+                    <li>Admission fee: ₹240 for Classes V-IX, ₹300 for Class XI</li>
+                    <li>Forms available at school office from December 15th</li>
+                    <li>Last date for submission: January 15th (Classes V-IX)</li>
+                    <li>Class XI admission begins after Madhyamik results</li>
+                    <li>Automatic promotion for Class IV students of attached primary school</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Achievements Section -->
+    <!-- 🌟 Awards & Recognition Section -->
+<section class="py-16 bg-gradient-to-br from-blue-50 to-white text-gray-800">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-extrabold text-center text-blue-800 mb-12 underline decoration-yellow-400 decoration-4 underline-offset-4">
+      🏆 Awards & Recognition
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- 🥇 Award 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-500 hover:scale-105 transform transition duration-300">
+        <div class="text-5xl mb-4 text-blue-600 text-center">🥇</div>
+        <h3 class="text-xl font-bold text-blue-700 text-center mb-2">Nirmal Vidyalaya Award</h3>
+        <p class="text-center text-gray-600 text-sm">
+          Honored in <strong>2013</strong> for maintaining excellent hygiene and cleanliness standards under the government’s Nirmal Vidyalaya initiative.
+        </p>
+      </div>
+
+      <!-- 🏅 Award 2 -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-green-500 hover:scale-105 transform transition duration-300">
+        <div class="text-5xl mb-4 text-green-600 text-center">🏅</div>
+        <h3 class="text-xl font-bold text-green-700 text-center mb-2">Best School in the District</h3>
+        <p class="text-center text-gray-600 text-sm">
+          Awarded in <strong>2015</strong> for overall academic performance, discipline, and student excellence in district-level evaluations.
+        </p>
+      </div>
+
+      <!-- 🎖️ Award 3 -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-yellow-500 hover:scale-105 transform transition duration-300">
+        <div class="text-5xl mb-4 text-yellow-500 text-center">🎖️</div>
+        <h3 class="text-xl font-bold text-yellow-700 text-center mb-2">Shisu Mitra Vidyalaya Award</h3>
+        <p class="text-center text-gray-600 text-sm">
+          Recognized in <strong>2015</strong> for being a child-friendly school focused on holistic development and care of students.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Gallery Section -->
+<section id="gallery" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 section-title">Photo Gallery</h2>
+
+    <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Images -->
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/486321.jpg" alt="Annual sports day" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/317853.jpg" alt="Science fair" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/844504.jpg" alt="Annual day" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/500871.jpg" alt="Outdoor class" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/169994.jpg" alt="Yoga in assembly" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/331854.jpg" alt="Library reading" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/157669.jpg" alt="Robotics workshop" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/15938.jpg" alt="Independence day" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+
+      <!-- Add hidden images here -->
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/441768.jpg" alt="Extra 1" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/885723.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/845328.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/902644.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/13079.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/464812.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/290103.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/565541.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/602339.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/287473.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/823097.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/471074.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/255220.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/717831.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/486321.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/993454.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/992867.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/431699.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/361713.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/112093.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/466338.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/418260.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/823407.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden shadow-md hidden extra-img">
+        <img src="https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/198264.jpg" alt="Extra 2" class="gallery-img w-full h-48 object-cover cursor-pointer">
+      </div>
+      
+
+
+      <!-- Add more as needed -->
+    </div>
+
+    <div class="mt-8 text-center">
+      <button onclick="showAllGalleryImages()" id="viewAllBtn" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition duration-300 text-lg transform hover:scale-105">
+        View All Photos
+      </button>
+    </div>
+  </div>
+
+  <!-- Fullscreen Preview Modal -->
+  <div id="imgPreviewModal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50">
+    <div class="relative max-w-3xl w-full px-4">
+      <button onclick="closePreview()" class="absolute top-0 right-0 text-white text-4xl font-bold p-4 hover:text-red-500">&times;</button>
+      <img id="previewImg" src="" alt="Preview" class="max-h-[90vh] mx-auto mt-8 rounded-lg shadow-lg">
+    </div>
+  </div>
+</section>
+
+<script>
+  function showAllGalleryImages() {
+    document.querySelectorAll(".extra-img").forEach(item => {
+      item.classList.remove("hidden");
+    });
+    document.getElementById("viewAllBtn").style.display = "none";
+  }
+
+  // Image click to open preview
+  document.querySelectorAll(".gallery-img").forEach(img => {
+    img.addEventListener("click", () => {
+      document.getElementById("previewImg").src = img.src;
+      document.getElementById("imgPreviewModal").classList.remove("hidden");
+    });
+  });
+
+  function closePreview() {
+    document.getElementById("imgPreviewModal").classList.add("hidden");
+    document.getElementById("previewImg").src = "";
+  }
+</script>
+<!-- ###########################################  GALARY SECTION END HERE ################################### -->
+
+
+    <!-- Faculty Section -->
+<section class="py-16 bg-white" id="faculty">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 section-title">Our Faculty</h2>
+
+    <div id="faculty-list" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Faculty members will be loaded here -->
+    </div>
+
+    <div class="text-center mt-8">
+      <button id="toggleFaculty" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition duration-300 text-lg transform hover:scale-105">View All Faculties</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const facultyData = [
+    { name: "Ambika Barma", title: "Librarian", qualification: "--", message: "Books are silent teachers. I help students discover endless worlds through reading.", image: "https://via.placeholder.com/150" },
+    { name: "Anupam Kar", title: "AT", qualification: "--", message: "Learning is a journey of exploration. I guide students with patience and purpose.", image: "https://via.placeholder.com/150" },
+    { name: "Apurba Kumar Das", title: "Contractual Teacher", qualification: "--", message: "Even on a temporary path, I give my best to inspire and uplift students.", image: "https://via.placeholder.com/150" },
+    { name: "Bikash Karmakar", title: "Clerk", qualification: "--", message: "Behind the scenes, I ensure the school's operations run efficiently every day.", image: "https://via.placeholder.com/150" },
+    { name: "Biman Barman", title: "AT", qualification: "--", message: "Every student holds a spark. I help ignite it with knowledge and kindness.", image: "https://via.placeholder.com/150" },
+    { name: "Biplab Ray", title: "AT", qualification: "--", message: "Through numbers and logic, I teach students to think critically and clearly.", image: "https://via.placeholder.com/150" },
+    { name: "Brajendra Nath Das", title: "AT", qualification: "--", message: "Education lights every life. I strive to brighten the path of learning daily.", image: "https://via.placeholder.com/150" },
+    { name: "Dhananjay Sarkar", title: "Clerk", qualification: "--", message: "Accuracy and order are key. I support the system to empower education.", image: "https://via.placeholder.com/150" },
+    { name: "Dilip Roy Sarkar", title: "AT", qualification: "--", message: "Language is the bridge to expression. I help students cross it with confidence.", image: "https://via.placeholder.com/150" },
+    { name: "Faruk Mandal", title: "AT", qualification: "--", message: "Science opens minds to wonder. I guide students to explore, ask, and learn.", image: "https://via.placeholder.com/150" },
+    { name: "Ganesh Chandra Roy", title: "Group D", qualification: "--", message: "Every corner of the school matters. I take care of it with pride and dedication.", image: "https://via.placeholder.com/150" },
+    { name: "Jaynal Miah", title: "AT", qualification: "--", message: "With compassion and clarity, I help students shape their minds for tomorrow.", image: "https://via.placeholder.com/150" },
+    { name: "Madan Kumar Barma", title: "AT", qualification: "--", message: "Through maps and landscapes, I teach students to see the world with curiosity.", image: "https://via.placeholder.com/150" },
+    { name: "Mainak Paul", title: "AT", qualification: "--", message: "The joy of discovery powers science. I encourage students to explore and question.", image: "https://via.placeholder.com/150" },
+    { name: "Manoj Kumar Bhattacharya", title: "AT", qualification: "--", message: "Sanskrit teaches tradition. I inspire students to appreciate its timeless wisdom.", image: "https://via.placeholder.com/150" },
+    { name: "Parimal Kumar Singha", title: "AT", qualification: "--", message: "History connects us to the past. I teach to help students learn from it and grow.", image: "https://via.placeholder.com/150" },
+    { name: "Pradip Kumar Sarkar", title: "AT", qualification: "--", message: "Each lesson is a new opportunity. I strive to make learning meaningful.", image: "https://via.placeholder.com/150" },
+    { name: "Prakash Mandal", title: "AT", qualification: "--", message: "English opens doors. I guide students to speak and write with confidence.", image: "https://via.placeholder.com/150" },
+    { name: "Pratima Saha", title: "AT", qualification: "--", message: "Teaching is a service of love. I help students grow with values and vision.", image: "https://via.placeholder.com/150" },
+    { name: "Puspa Basumata", title: "AT", qualification: "--", message: "Every child matters. I teach with care and celebrate every achievement.", image: "https://via.placeholder.com/150" },
+    { name: "Rahul Bhattacharjee", title: "AT", qualification: "--", message: "Language builds connection. I help students find their voice.", image: "https://via.placeholder.com/150" },
+    { name: "Rajib Mandal", title: "AT", qualification: "--", message: "A classroom is a community. I guide students to learn, respect, and share.", image: "https://via.placeholder.com/150" },
+    { name: "Raju Basak", title: "AT", qualification: "--", message: "Mathematics sharpens thinking. I support students to solve and succeed.", image: "https://via.placeholder.com/150" },
+    { name: "Rakhi Barman", title: "AT", qualification: "--", message: "Creativity begins with understanding. I aim to spark curiosity in young minds.", image: "https://via.placeholder.com/150" },
+    { name: "Rakhi Rava", title: "Group D", qualification: "--", message: "Cleanliness supports learning. I serve with care and commitment.", image: "https://via.placeholder.com/150" },
+    { name: "Ramgopal Sarkar", title: "AT", qualification: "--", message: "Through ancient texts, I help students gain deep wisdom and discipline.", image: "https://via.placeholder.com/150" },
+    { name: "Ranjan Sarkar", title: "AT", qualification: "--", message: "Science reveals the beauty of life. I teach students to observe and understand.", image: "https://via.placeholder.com/150" },
+    { name: "Ranjit Kumar Das", title: "Group D", qualification: "--", message: "I keep the school environment safe and clean, ensuring a better place for learning.", image: "https://via.placeholder.com/150" },
+    { name: "Rina Rani Das", title: "AT", qualification: "--", message: "Teaching is nurturing. I believe every student deserves time and belief.", image: "https://via.placeholder.com/150" },
+    { name: "Sadhan Chandra Datta", title: "Group D", qualification: "--", message: "Support staff are silent heroes. I proudly serve our school community.", image: "https://via.placeholder.com/150" },
+    { name: "Sagar Das", title: "AT", qualification: "--", message: "With enthusiasm and empathy, I help shape minds that dream and do.", image: "https://via.placeholder.com/150" },
+    { name: "Sahadeb Ekka", title: "AT", qualification: "--", message: "Every day is a new lesson. I strive to make each one impactful.", image: "https://via.placeholder.com/150" },
+    { name: "Sampa Patra", title: "AT", qualification: "--", message: "Life science is a mirror to nature. I teach students to respect and protect it.", image: "https://via.placeholder.com/150" },
+    { name: "Sanjib Sen", title: "AT", qualification: "--", message: "Discipline and dedication build character. I teach by example.", image: "https://via.placeholder.com/150" },
+    { name: "Shampa Hui", title: "AT", qualification: "--", message: "Learning is endless. I inspire students to keep asking and discovering.", image: "https://via.placeholder.com/150" },
+    { name: "Subhas Dutta", title: "AT", qualification: "--", message: "Education empowers change. I teach to transform lives.", image: "https://via.placeholder.com/150" },
+    { name: "Subrata Saha", title: "AT", qualification: "--", message: "With curiosity and care, I guide students to understand the living world.", image: "https://via.placeholder.com/150" },
+    { name: "Sujit Kr Acharjee", title: "AT", qualification: "--", message: "Words have power. I teach students to use them wisely and kindly.", image: "https://via.placeholder.com/150" },
+    { name: "Sutapa Goswami", title: "AT", qualification: "--", message: "Zoology connects us to the world. I teach it with energy and wonder.", image: "https://via.placeholder.com/150" },
+    { name: "Tirtha Nath Das", title: "AT", qualification: "--", message: "English is a global voice. I help students express themselves with clarity.", image: "https://via.placeholder.com/150" },
+    { name: "Uttam Kumar Sarkar", title: "Clerk", qualification: "--", message: "Every document matters. I work to keep records clear and updated.", image: "https://via.placeholder.com/150" }
+  ];
+
+  const facultyList = document.getElementById("faculty-list");
+
+  function renderFaculty(limit) {
+    facultyList.innerHTML = "";
+    facultyData.slice(0, limit).forEach(faculty => {
+      const card = document.createElement("div");
+      card.className = "teacher-card bg-gray-50 p-6 rounded-lg shadow-md text-center transition duration-300";
+      card.innerHTML = `
+        <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-100">
+          <img src="${faculty.image}" alt="${faculty.name}" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold">${faculty.name}</h3>
+        <p class="text-blue-700 font-medium mb-2">${faculty.title}</p>
+        <p class="text-sm text-gray-600 mb-3">${faculty.qualification}</p>
+        <p class="text-sm italic text-gray-600">"${faculty.message}"</p>
+      `;
+      facultyList.appendChild(card);
+    });
+  }
+
+  let showingAll = false;
+  const toggleBtn = document.getElementById("toggleFaculty");
+  toggleBtn.addEventListener("click", () => {
+    showingAll = !showingAll;
+    renderFaculty(showingAll ? facultyData.length : 8);
+    toggleBtn.textContent = showingAll ? "Show Less" : "View All Faculties";
+  });
+
+  renderFaculty(8);
+</script>
+
+<!--  #################################################  FACULTY SECTION END   #########################################-->
+    
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50 overflow-hidden">
+  <div class="container mx-auto px-4">
+
+    <h2 class="text-3xl font-bold text-center mb-12 section-title">Testimonial</h2>
+
+    <div class="testimonial-strip">
+      <div class="testimonial-track">
+        <!-- Repeat this box for each testimonial -->
+
+        <div class="testimonial-box">
+          <p>"Discipline and love from teachers helped me achieve success."</p>
+          <h4>Bishal Paul</h4>
+          <span>Medical Student</span>
+        </div>
+
+        <div class="testimonial-box">
+          <p>"Cracked NEET thanks to strong base built here."</p>
+          <h4>Papan Sarkar</h4>
+          <span>Medical Student</span>
+        </div>
+
+        <div class="testimonial-box">
+          <p>"School gave me confidence to pursue cybersecurity."</p>
+          <h4>Rajarshi Sarkar</h4>
+          <span>Engineering Student</span>
+        </div>
+
+        <div class="testimonial-box">
+          <p>"Supportive teachers made all the difference."</p>
+          <h4>Masuma Parvin</h4>
+          <span>Nurse Student</span>
+        </div>
+
+        <div class="testimonial-box">
+          <p>"Cultural and academics both were top-class."</p>
+          <h4>Niloy Biswas</h4>
+          <span>B.A. in English Honours</span>
+        </div>
+
+        <div class="testimonial-box">
+          <p>"The school felt like a second home."</p>
+          <h4>Raju Das</h4>
+          <span>Engineering Student</span>
+        </div>
+
+        <div class="testimonial-box">
+          <p>"Best teachers and best values — unforgettable."</p>
+          <h4>Sujan Das</h4>
+          <span> B.A. in Bengali Honours</span>
+        </div>
+
+        <div class="testimonial-box">
+  <p>"I learned how to speak with purpose and lead with values."</p>
+  <h4>Parthis Roy</h4>
+  <span>B.A. in Political Science</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"The foundation here helped me crack entrance exams and pursue a career in pharmacy."</p>
+  <h4>Aditya Pal</h4>
+  <span>B.Pharm Student</span>
+</div>
+<div class="testimonial-box">
+  <p>"The environment was so supportive, it brought out the best in me."</p>
+  <h4>Sayantan Ghosh</h4>
+  <span>B.Sc in Mathematics</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"My communication skills grew tremendously because of our teachers."</p>
+  <h4>Ankita Sen</h4>
+  <span>Media & Journalism Student</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"It taught me values that help me every day as a working professional."</p>
+  <h4>Avik Das</h4>
+  <span>Software Developer at TCS</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"From classroom to courtroom — the foundation was laid here."</p>
+  <h4>Priyanka Saha</h4>
+  <span>Law Student</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"Excellent faculty, good friends, and unforgettable memories."</p>
+  <h4>Koustav Roy</h4>
+  <span>B.A. in History</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"They believed in me even when I doubted myself."</p>
+  <h4>Arpita Dutta</h4>
+  <span>MBA Student</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"The school taught me how to think critically and act kindly."</p>
+  <h4>Ritwik Chatterjee</h4>
+  <span>Entrepreneur</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"Every teacher was like a guiding light. I still remember their words."</p>
+  <h4>Debjani Mitra</h4>
+  <span>B.Ed & Primary Teacher</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"All I am today started from this very place. Thank you!"</p>
+  <h4>Sanchita Paul</h4>
+  <span>UPSC Aspirant</span>
+</div>
+<div class="testimonial-box">
+  <p>"Our teachers never gave up on any student — they made learning enjoyable and personal."</p>
+  <h4>Rishita Pal</h4>
+  <span>English Honours Student</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"Classrooms were always clean and equipped. I loved how modern our science labs were."</p>
+  <h4>Animesh Das</h4>
+  <span>B.Sc Physics</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"The library was my second home. It had every book I ever needed and a peaceful environment."</p>
+  <h4>Bidisha Roy</h4>
+  <span>B.A. in Sociology</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"I still remember how kind and motivating our teachers were — their guidance shaped my life."</p>
+  <h4>Soumyajit Bhattacharya</h4>
+  <span>B.Tech in Electronics</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"From sports ground to smart boards — the school gave us every facility to grow and shine."</p>
+  <h4>Trisha Choudhury</h4>
+  <span>National Level Athlete</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"Every teacher here genuinely cared. They treated us like their own children."</p>
+  <h4>Sayan Mukherjee</h4>
+  <span>B.Com Student</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"The school building, the green campus, and the peaceful atmosphere — all made learning a joy."</p>
+  <h4>Arindam Bose</h4>
+  <span>Graduate in Geography</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"Labs, library, computer room — everything was organized and well-maintained."</p>
+  <h4>Megha Sen</h4>
+  <span>BCA Student</span>
+</div>
+
+<div class="testimonial-box">
+  <p>"I’m proud to be an alumnus of a school that gave me discipline, confidence, and values."</p>
+  <h4>Nilanjan Sarkar</h4>
+  <span>IT Professional</span>
+</div>
+
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Contact Us</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="contact-card p-6 bg-blue-900 rounded-lg shadow-md transition duration-300 text-lg">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <span class="mr-3">📌</span> Address
+                        </h3>
+                        <p>Natabari High School</p>
+                        <p>Natabari, Coochbehar</p>
+                        <p>West Bengal - 736101</p>
+                    </div>
+                    
+                    <div class="contact-card p-6 bg-blue-900 rounded-lg shadow-md transition duration-300 text-lg">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <span class="mr-3">📞</span> Phone & Email
+                        </h3>
+                        <p class="mb-2"><span class="font-medium">Office:</span> +91 3582 254XXX</p>
+                        <p class="mb-2"><span class="font-medium">Principal:</span> +91 94341 XXXXX</p>
+                        <p><span class="font-medium">Email:</span> natabarihighschool@gmail.com</p>
+                    </div>
+                    
+                    <div class="contact-card p-6 bg-blue-900 rounded-lg shadow-md transition duration-300 text-lg">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <span class="mr-3">⏰</span> Office Hours
+                        </h3>
+                        <p><span class="font-medium">Monday-Friday:</span> 10:30 AM - 4:30 PM</p>
+                        <p><span class="font-medium">Saturday:</span> 10:30 AM - 3:00 PM</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-white p-8 rounded-lg shadow-lg text-gray-800">
+                        <h3 class="text-2xl font-bold mb-6 text-blue-800">Enquiry Form</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="name" class="block mb-1 font-medium">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-1 font-medium">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="phone" class="block mb-1 font-medium">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="subject" class="block mb-1 font-medium">Subject</label>
+                                <select id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select</option>
+                                    <option value="admission">Admission Enquiry</option>
+                                    <option value="academic">Academic Matters</option>
+                                    <option value="transport">Transport</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block mb-1 font-medium">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-lg font-medium transition duration-300 text-lg transform hover:scale-[1.01]">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <iframe src="https://www.google.com/maps?q=Natabari+High+School,+Debottar+Charaljani,+West+Bengal+736160&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-xl"></iframe>
+            </div>
+        </div>
+    </section>
+
+ 
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="data:image/jpeg;base64,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" alt="Natabari High School logo" class="h-10 w-auto">
+                        <h3 class="text-xl font-bold">Natabari High School</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Providing quality education in Coochbehar district since 1967 with a focus on academic excellence and character building.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/NatabariHighSchoolhs/" class="text-gray-400 hover:text-white text-xl transition duration-300">FB</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition duration-300">TW</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition duration-300">IG</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition duration-300">YT</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300 text-lg">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300 text-lg">About Us</a></li>
+                        <li><a href="#academics" class="text-gray-400 hover:text-white transition duration-300 text-lg">Academics</a></li>
+                        <li><a href="#facilities" class="text-gray-400 hover:text-white transition duration-300 text-lg">Facilities</a></li>
+                        <li><a href="#admission" class="text-gray-400 hover:text-white transition duration-300 text-lg">Admission</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Important Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://wbbse.wb.gov.in/Web/Home?l=Z%2F%2F2JeEw6P%2FkXiUjdLauQg%3D%3D" class="text-gray-400 hover:text-white transition duration-300 text-lg">WBBSE Website</a></li>
+                        <li><a href="https://wbchse.wb.gov.in/" class="text-gray-400 hover:text-white transition duration-300 text-lg">WBCHSE Website</a></li>
+                        <li><a href="https://www.wbkanyashree.gov.in/kp_4.0/index.php" class="text-gray-400 hover:text-white transition duration-300 text-lg">Kanyashree</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-lg">Teacher Login</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-lg">Student Portal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-lg">Alumni Network</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for latest updates and announcements.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-r-lg transition duration-300 text-lg">Subscribe</button>
+                    </form>
+                </div>
+                <!-- ✅ Developer Credit with Clickable Name -->
+<div class="w-full flex justify-center mt-8">
+  <p class="text-sm text-gray-400 text-center">
+    Proudly Built by 👨‍💻<br>
+    <a href="https://rsarkar.co.in" target="_blank" rel="noopener noreferrer"
+       class="font-bold text-yellow-400 hover:text-white transition duration-300 text-lg ">
+      Rajarshi Sarkar
+    </a>
+  </p>
+</div>
+
+            </div>
+
+            
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0 text-lg">© 2025 Natabari High School. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-lg">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-lg">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-lg">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white p-3 rounded-full shadow-lg transition duration-300 transform hover:scale-110">
+        🔝
+    </a>
+
+    <script>
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.section-title, .card, .facility-card, .teacher-card, .contact-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial styles for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.section-title, .card, .facility-card, .teacher-card, .contact-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        const navLinks = document.querySelector('nav');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('right-0');
+            navLinks.classList.toggle('bg-white');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('shadow-md');
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your enquiry. We will contact you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+    
+    
+</body>
+</html>

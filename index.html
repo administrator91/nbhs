@@ -215,6 +215,14 @@
             </section>
 
 
+
+
+    <!-- ##############################  ✅ Sparkle Container  ######################## -->
+
+
+  <!-- ##############################  ✅ Sparkle Container End  ######################## -->
+
+
             <!-- Academics Section -->
             <section id="academics" class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4">
@@ -1020,5 +1028,46 @@
 
     
     <script src="main.js"></script>
+
+<!--  ############################  ACCESS RESTRICTED START  ##########################  -->
+    <div id="blockToast" class="block-toast">⚠️ Access Denied</div>
+<script>
+  // Get toast box element
+  const toastBox = document.getElementById("blockToast");
+  const toastMessage = "⚠️ Access Denied: Admin has not granted permission to view source or save this page.";
+
+  // Show toast function
+  function showToast() {
+    if (!toastBox.classList.contains("show")) {
+      toastBox.textContent = toastMessage;
+      toastBox.classList.add("show");
+      setTimeout(() => {
+        toastBox.classList.remove("show");
+      }, 3000);
+    }
+  }
+
+  // ✅ Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    showToast();
+  });
+
+  // ✅ Block dev tools and source/view/save shortcuts
+  document.addEventListener("keydown", function (e) {
+    const key = e.key.toLowerCase();
+
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && ["u", "s"].includes(key)) ||
+      (e.ctrlKey && e.shiftKey && ["i", "j", "c", "k"].includes(key))
+    ) {
+      e.preventDefault();
+      showToast();
+    }
+  });
+</script>
+<!--  ############################  ACCESS RESTRICTED END  ##########################  -->
+
 </body>
 </html>

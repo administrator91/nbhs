@@ -1,21 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-                      const toggleBtn = document.getElementById("menuToggleBtn");
-                      const mobileMenu = document.getElementById("mobileNavMenu");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("menuToggleBtn");
+  const navMenu = document.getElementById("navMenu");
 
-                      toggleBtn.addEventListener("click", function () {
-                        mobileMenu.classList.toggle("show");
-                        mobileMenu.classList.toggle("hidden");
-                      });
+  toggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
 
-                      // Optional: Click outside to close
-                      document.addEventListener("click", function (event) {
-                        const isInside = toggleBtn.contains(event.target) || mobileMenu.contains(event.target);
-                        if (!isInside && mobileMenu.classList.contains("show")) {
-                          mobileMenu.classList.remove("show");
-                          mobileMenu.classList.add("hidden");
-                        }
-                      });
-                    });
+  // Auto-close on outside click
+  document.addEventListener("click", (e) => {
+    if (!toggleBtn.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove("show");
+    }
+  });
+
+  // Auto-close on scroll
+  window.addEventListener("scroll", () => {
+    navMenu.classList.remove("show");
+  });
+});
+///////////////////////////////////////   ##############################   NAV MENU JS CLOSED HERE ###########
+
 
 function showAllGalleryImages() {
             document.querySelectorAll(".extra-img").forEach(item => {
@@ -178,3 +182,9 @@ const facultyData = [
                         contactForm.reset();
                     });
                 }
+
+
+
+
+
+                

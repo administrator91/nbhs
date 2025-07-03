@@ -541,3 +541,31 @@ body {
         }
       }
       
+
+
+
+
+
+/* ############################  ACCESS RESTRICTED START  ##########################  */
+      .block-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ef4444; /* red-500 */
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+.block-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ############################  ACCESS RESTRICTED END  ##########################  */

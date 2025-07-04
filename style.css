@@ -569,3 +569,102 @@ body {
   transform: translateY(0);
 }
 /* ############################  ACCESS RESTRICTED END  ##########################  */
+
+
+
+/* ############################  3 card hover start  ##########################  */
+.card {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px 5px rgba(0, 149, 255, 0.3), 0 0 30px 10px rgba(0, 149, 255, 0.2);
+  transform: translateY(-5px);
+}
+/* ############################  3 card hover end (top side)  ##########################  */
+
+
+
+/* ############################  3 award animation start  ##########################  */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  @keyframes glow-blue {
+    0%, 100% { box-shadow: 0 0 10px #3b82f6; }
+    50% { box-shadow: 0 0 20px #3b82f6, 0 0 30px #3b82f6; }
+  }
+
+  @keyframes glow-green {
+    0%, 100% { box-shadow: 0 0 10px #10b981; }
+    50% { box-shadow: 0 0 20px #10b981, 0 0 30px #10b981; }
+  }
+
+  @keyframes glow-yellow {
+    0%, 100% { box-shadow: 0 0 10px #facc15; }
+    50% { box-shadow: 0 0 20px #facc15, 0 0 30px #facc15; }
+  }
+
+  .award-card {
+    transition: transform 0.3s ease;
+  }
+
+  .award-icon {
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  .glow-blue {
+    animation: glow-blue 2.5s infinite ease-in-out;
+  }
+
+  .glow-green {
+    animation: glow-green 2.5s infinite ease-in-out;
+  }
+
+  .glow-yellow {
+    animation: glow-yellow 2.5s infinite ease-in-out;
+  }
+/* ############################  3 award animation end  ##########################  */
+/* ############################  SCL NOTICE START  ##########################  */
+  /* Glowing animation */
+  .glow {
+    animation: glow-effect 2s infinite alternate;
+  }
+
+  @keyframes glow-effect {
+    from {
+      box-shadow: 0 0 5px rgba(255, 223, 0, 0.3);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(255, 223, 0, 0.8);
+    }
+  }
+
+  /* Vertical scroll animation */
+  .scroll-up {
+    animation: scrollUp 20s linear infinite;
+  }
+
+  @keyframes scrollUp {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -100%;
+    }
+  }
+
+  /* Optional: visible scrollbar */
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #fbbf24;
+    border-radius: 10px;
+  }
+/* ############################  SCL NOTICE END  ##########################  */
+
+
+

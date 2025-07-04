@@ -183,8 +183,23 @@ const facultyData = [
                     });
                 }
 
+//  #########################################  VIDEO PLAYER GALARY SECTION START ##############################
+            function openVideoModal(videoUrl) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    video.src = videoUrl;
+    modal.classList.remove('hidden');
+    video.play();
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    video.pause();
+    video.src = '';
+    modal.classList.add('hidden');
+  }
+//  #########################################  VIDEO PLAYER GALARY SECTION END ##############################
 
 
 
-
-            

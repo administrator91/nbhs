@@ -667,4 +667,77 @@ body {
 /* ############################  SCL NOTICE END  ##########################  */
 
 
+/* ############################  FOOTER PART CONTACT HEADERS DESIGN & ANIMATED START  ##########################  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
+.heading-underline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  padding-bottom: 4px;
+}
+
+.heading-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #facc15, #38bdf8);
+  border-radius: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineGrow 1s ease-out forwards 0.3s;
+}
+
+@keyframes underlineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes headingGlow {
+  0% {
+    text-shadow: 0 0 0px #fff;
+  }
+  50% {
+    text-shadow: 0 0 6px #facc15, 0 0 10px #38bdf8;
+  }
+  100% {
+    text-shadow: 0 0 0px #fff;
+  }
+}
+
+.animate-headingGlow {
+  animation: headingGlow 2.5s ease-in-out infinite;
+}
+
+/* ############################  SUB HEADERS FROM CONTACT SECTION DESIGN & ANIMATED START  ##########################  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+.contact-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  padding: 2px 6px;
+  background: linear-gradient(90deg, #facc15, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: popIn 0.8s ease-out both;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ############################  FOOTER PART CONTACT HEADERS DESIGN & ANIMATED END  ##########################  */

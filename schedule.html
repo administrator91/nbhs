@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>স্কুল রুটিন | Natabari High School</title>
+  <link rel="icon" type="image/png" href="assets/nbhs.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Serif Bengali', serif;
+      background: linear-gradient(120deg, #f4f7fa, #e0f7fa);
+      animation: backgroundLoop 15s ease-in-out infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes backgroundLoop {
+      0% { background: linear-gradient(120deg, #f4f7fa, #e0f7fa); }
+      100% { background: linear-gradient(120deg, #e0f7fa, #f4f7fa); }
+    }
+
+    header {
+      background: linear-gradient(90deg, #004d99, #0066cc);
+      color: white;
+      padding: 20px;
+      animation: slideDown 2s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    select {
+      padding: 12px;
+      font-size: 16px;
+      margin: 20px auto;
+      width: 280px;
+      border: 2px solid #007acc;
+      border-radius: 8px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 122, 204, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(0, 122, 204, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 122, 204, 0); }
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 1000px;
+      max-width: 100%;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease;
+      margin: 0 auto;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      white-space: nowrap;
+    }
+
+    th {
+      background-color: #cce7ff;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #003366, #004080);
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    h1, h2 {
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      select {
+        width: 90%;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+      <img src="assets/nbhs.png" alt="School Logo" style="height: 60px; border-radius: 8px; animation: fadeIn 2s ease;" />
+      <h1>📚 নটাবাড়ি হাই স্কুল শ্রেণী রুটিন 📚</h1>
+  </header>
+
+  <select id="classSelect" onchange="showRoutine()">
+    <option value="">-- একটি শ্রেণী নির্বাচন করুন --</option>
+    <option value="class5">ক্লাস ৫</option>
+    <option value="class6">ক্লাস ৬</option>
+    <option value="class7">ক্লাস ৭</option>
+    <option value="class8">ক্লাস ৮</option>
+    <option value="class9">ক্লাস ৯</option>
+    <option value="class10">ক্লাস ১০</option>
+    <option value="class11">ক্লাস ১১</option>
+    <option value="class12">ক্লাস ১২</option>
+  </select>
+
+  <div class="table-container" id="routineContainer"></div>
+
+  <footer>
+    © 2025 - Natabari High School | স্কুল রুটিন পোর্টাল
+  </footer>
+
+  <script>
+    function showRoutine() {
+      const cls = document.getElementById("classSelect").value;
+      const div = document.getElementById("routineContainer");
+
+      if (cls === "class5") {
+        div.innerHTML = `
+        <h2>ক্লাস ৫ রুটিন</h2>
+        <div class="table-container">
+          <table>
+          <tr>
+  <th>দিন</th>
+  <th>১ম পিরিয়ড</th>
+  <th>২য়</th>
+  <th>৩য়</th>
+  <th>৪র্থ</th>
+  <th>টিফিন</th>
+  <th>৫ম</th>
+  <th>৬ষ্ঠ</th>
+</tr>
+          <tr><td>সোমবার</td><td>বাংলা<br><small>(10:00-10:45)</small></td><td>গণিত<br><small>(10:45-11:30)</small></td><td>ইংরেজি<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গণিত<br><small>(1:30-2:15)</small></td><td>চিত্রকলা়<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>মঙ্গলবার</td><td>ইংরেজি<br><small>(10:00-10:45)</small></td><td>বাংলা<br><small>(10:45-11:30)</small></td><td>গণিত<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গান<br><small>(1:30-2:15)</small></td><td>খেলা<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>বুধবার</td><td>গণিত<br><small>(10:00-10:45)</small></td><td>ইতিহাস<br><small>(10:45-11:30)</small></td><td>বাংলা<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গান<br><small>(1:30-2:15)</small></td><td>খেলা<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>বৃহস্পতিবার</td><td>ইংরেজি<br><small>(10:00-10:45)</small></td><td>ভূগোল<br><small>(10:45-11:30)</small></td><td>গণিত<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>নাচ<br><small>(1:30-2:15)</small></td><td>চিত্রকলা়<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>শুক্রবার</td><td>বাংলা<br><small>(10:00-10:45)</small></td><td>ইংরেজি<br><small>(10:45-11:30)</small></td><td>পরিবেশ<br><small>(11:30-12:15)</small></td><td>গণিত<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গান<br><small>(1:30-2:15)</small></td><td>খেলা<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>শনিবার</td><td>গণিত<br><small>(10:00-10:45)</small></td><td>বাংলা<br><small>(10:45-11:30)</small></td><td>ইংরেজি<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td colspan='4'>অর্ধদিবস (শুধু ৪টি পিরিয়ড)</td></tr>
+        </table>
+        </div>
+        <a href="https://drive.google.com/file/d/CLASS5_PDF_ID/view?usp=sharing" target="_blank" style="display: inline-block; margin: 10px 0; background-color: #007acc; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; animation: pulse 2s infinite;">📄 PDF ডাউনলোড</a>`;
+      } 
+      
+      else if (cls === "class6") {
+  div.innerHTML = `
+        <h2>ক্লাস ৫ রুটিন</h2>
+        <div class="table-container">
+          <table>
+          <tr>
+  <th>দিন</th>
+  <th>১ম পিরিয়ড</th>
+  <th>২য়</th>
+  <th>৩য়</th>
+  <th>৪র্থ</th>
+  <th>টিফিন</th>
+  <th>৫ম</th>
+  <th>৬ষ্ঠ</th>
+</tr>
+          <tr><td>সোমবার</td><td>বাংলা<br><small>(10:00-10:45)</small></td><td>গণিত<br><small>(10:45-11:30)</small></td><td>ইংরেজি<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গণিত<br><small>(1:30-2:15)</small></td><td>চিত্রকলা়<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>মঙ্গলবার</td><td>ইংরেজি<br><small>(10:00-10:45)</small></td><td>বাংলা<br><small>(10:45-11:30)</small></td><td>গণিত<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গান<br><small>(1:30-2:15)</small></td><td>খেলা<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>বুধবার</td><td>গণিত<br><small>(10:00-10:45)</small></td><td>ইতিহাস<br><small>(10:45-11:30)</small></td><td>বাংলা<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গান<br><small>(1:30-2:15)</small></td><td>খেলা<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>বৃহস্পতিবার</td><td>ইংরেজি<br><small>(10:00-10:45)</small></td><td>ভূগোল<br><small>(10:45-11:30)</small></td><td>গণিত<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>নাচ<br><small>(1:30-2:15)</small></td><td>চিত্রকলা়<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>শুক্রবার</td><td>বাংলা<br><small>(10:00-10:45)</small></td><td>ইংরেজি<br><small>(10:45-11:30)</small></td><td>পরিবেশ<br><small>(11:30-12:15)</small></td><td>গণিত<br><small>(12:15-1:00)</small></td><td>টিফিন<br><small>(1:00-1:30)</small></td><td>গান<br><small>(1:30-2:15)</small></td><td>খেলা<br><small>(2:15-3:00)</small></td></tr>
+          <tr><td>শনিবার</td><td>গণিত<br><small>(10:00-10:45)</small></td><td>বাংলা<br><small>(10:45-11:30)</small></td><td>ইংরেজি<br><small>(11:30-12:15)</small></td><td>পরিবেশ<br><small>(12:15-1:00)</small></td><td colspan='4'>অর্ধদিবস (শুধু ৪টি পিরিয়ড)</td></tr>
+        </table>
+        </div>
+        <a href="https://drive.google.com/file/d/CLASS5_PDF_ID/view?usp=sharing" target="_blank" style="display: inline-block; margin: 10px 0; background-color: #007acc; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; animation: pulse 2s infinite;">📄 PDF ডাউনলোড</a>`;
+      } 
+
+      else {
+        div.innerHTML = "<p>এই শ্রেণীর রুটিন এখনো সংযোজন করা হয়নি।</p>";
+      }
+    }
+  </script>
+</body>
+</html>

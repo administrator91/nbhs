@@ -45,15 +45,38 @@
   <div class="loading-text">Loading NBHS...</div>
   <div class="established">Established 1967</div>
 </div>
+
+<!-- Add this CSS in your <style> tag -->
+<style>
+  /* Disable scroll, touch and scrollbars when preloader is active */
+  body.preloader-active,
+  html.preloader-active {
+    overflow: hidden !important;
+    height: 100vh;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+</style>
+
 <!-- At end of <body> before </body> -->
 <script>
+  // Disable scroll, touch at start
+  document.body.classList.add("preloader-active");
+  document.documentElement.classList.add("preloader-active");
+
   window.addEventListener("load", function () {
     setTimeout(function () {
       const preloader = document.getElementById("preloader");
       preloader.classList.add("fade-out");
+
+      // Re-enable scroll and interaction
+      document.body.classList.remove("preloader-active");
+      document.documentElement.classList.remove("preloader-active");
     }, 2500);
   });
 </script>
+
+
 
   <!-- ########################################## PRELOADER SECTION END ########################################################## -->
 

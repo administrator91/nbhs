@@ -34,6 +34,29 @@
 </head>
 
 <body class="bg-gray-50">
+
+
+
+  
+ <!-- ########################################## PRELOADER SECTION START ########################################################## -->
+  <!-- Just after <body> -->
+<div id="preloader">
+  <img src="assets/nbhs.png" alt="NBHS Logo" class="logo" />
+  <div class="loading-text">Loading NBHS...</div>
+  <div class="established">Established 1967</div>
+</div>
+<!-- At end of <body> before </body> -->
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      const preloader = document.getElementById("preloader");
+      preloader.classList.add("fade-out");
+    }, 2500);
+  });
+</script>
+
+  <!-- ########################################## PRELOADER SECTION END ########################################################## -->
+
             <!-- Header & Navigation -->
             <header class="sticky top-0 z-50 bg-white shadow-md">
                 <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -881,25 +904,6 @@
 
   <!--  #################################################  FACULTY SECTION END   #########################################-->
 
-
- <!-- ########################################## PRELOADER SECTION START ########################################################## -->
-  <!-- Just after <body> -->
-<div id="preloader">
-  <img src="assets/nbhs.png" alt="NBHS Logo" class="logo" />
-  <div class="loading-text">Loading NBHS...</div>
-  <div class="established">Established 1967</div>
-</div>
-<!-- At end of <body> before </body> -->
-<script>
-  window.addEventListener("load", function () {
-    setTimeout(function () {
-      const preloader = document.getElementById("preloader");
-      preloader.classList.add("fade-out");
-    }, 2500);
-  });
-</script>
-
-  <!-- ########################################## PRELOADER SECTION END ########################################################## -->
 
 
 

@@ -75,5 +75,23 @@
       &copy; 2025 Natabari High School | All rights reserved
     </footer>
   </div>
+
+  <!-- 🔐 Shortcut & Inspect Protection -->
+  <script>
+    // Block right-click
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    // Block inspect/save shortcuts
+    document.addEventListener("keydown", function (e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && (e.key === "u" || e.key === "U" || e.key === "s" || e.key === "S")) ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C"))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
 </body>
 </html>

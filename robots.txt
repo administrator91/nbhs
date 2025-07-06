@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://administrator91.github.io/nbhs/sitemap.xml

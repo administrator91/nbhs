@@ -871,7 +871,31 @@
           
         </script>
 
-        <!--  #################################################  FACULTY SECTION END   #########################################-->
+  <!--  #################################################  FACULTY SECTION END   #########################################-->
+
+
+ <!-- ########################################## PRELOADER SECTION START ########################################################## -->
+  <!-- Just after <body> -->
+<div id="preloader">
+  <img src="assets/nbhs.png" alt="NBHS Logo" class="logo" />
+  <div class="loading-text">Loading NBHS...</div>
+  <div class="established">Established 1967</div>
+</div>
+<!-- At end of <body> before </body> -->
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      const preloader = document.getElementById("preloader");
+      preloader.classList.add("fade-out");
+    }, 2500);
+  });
+</script>
+
+  <!-- ########################################## PRELOADER SECTION END ########################################################## -->
+
+
+
+
             
             <!-- Testimonials Section -->
             <section class="py-16 bg-gray-50 overflow-hidden">

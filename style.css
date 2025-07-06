@@ -741,3 +741,83 @@ body {
   }
 }
 /* ############################  FOOTER PART CONTACT HEADERS DESIGN & ANIMATED END  ##########################  */
+/* #######################################  PRELOADER START ################################### */
+ /* Preloader Styles */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  #preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .logo {
+    width: 110px;
+    animation: pulse 1.8s infinite;
+    margin-bottom: 16px;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.8;
+    }
+  }
+
+  .loading-text {
+    font-family: monospace;
+    font-size: 20px;
+    color: #2e86de;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: 2px solid #2e86de;
+    animation: typing 2s steps(20, end) forwards;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 180px; }
+  }
+
+  .established {
+    font-size: 16px;
+    color: #555;
+    margin-top: 12px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeZoomIn 1s ease 2s forwards;
+  }
+
+  @keyframes fadeZoomIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+/* #######################################  PRELOADER END ################################### */
+
+
+
+
+
+

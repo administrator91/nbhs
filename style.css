@@ -628,42 +628,68 @@ body {
   }
 /* ############################  3 award animation end  ##########################  */
 /* ############################  SCL NOTICE START  ##########################  */
-  /* Glowing animation */
-  .glow {
-    animation: glow-effect 2s infinite alternate;
-  }
 
-  @keyframes glow-effect {
-    from {
-      box-shadow: 0 0 5px rgba(255, 223, 0, 0.3);
-    }
-    to {
-      box-shadow: 0 0 20px rgba(255, 223, 0, 0.8);
-    }
+/* Glowing animation for individual notice boxes */
+.glow {
+  animation: glow-effect 2s infinite alternate;
+}
+@keyframes glow-effect {
+  from {
+    box-shadow: 0 0 5px rgba(255, 223, 0, 0.3);
   }
+  to {
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.8);
+  }
+}
 
-  /* Vertical scroll animation */
-  .scroll-up {
-    animation: scrollUp 20s linear infinite;
+/* Vertical scroll animation */
+.scroll-up {
+  animation: scrollUp 20s linear infinite;
+}
+@keyframes scrollUp {
+  0% {
+    top: 100%;
   }
+  100% {
+    top: -100%;
+  }
+}
 
-  @keyframes scrollUp {
-    0% {
-      top: 100%;
-    }
-    100% {
-      top: -100%;
-    }
-  }
+/* Optional: visible scrollbar */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #fbbf24;
+  border-radius: 10px;
+}
 
-  /* Optional: visible scrollbar */
-  .scrollbar::-webkit-scrollbar {
-    width: 8px;
+/* 🌟 Apply animated glowing border to your specific section without changing class */
+section.bg-gray-100.shadow-md {
+  position: relative;
+  border: 3px solid #facc15;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #fffde7, #fff8c3);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+  animation: borderGlowBox 4s ease-in-out infinite alternate;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+section.bg-gray-100.shadow-md:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 35px rgba(250, 204, 21, 0.7);
+}
+
+@keyframes borderGlowBox {
+  0% {
+    border-color: #fde047;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
   }
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: #fbbf24;
-    border-radius: 10px;
+  100% {
+    border-color: #facc15;
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.6);
   }
+}
 /* ############################  SCL NOTICE END  ##########################  */
 
 

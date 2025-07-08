@@ -27,7 +27,9 @@
         .nav-link:hover::after {
             width: 100%;
         }
-        
+        /* ########################################### HERO HEADER IMAGE SECTION #################################### */
+        /*
+        ################################################## ONE IMAGE CSS (old) [applicable if u set a video mp4👈👈👈]  ######################################
         .hero-image {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/383776.jpg');
             background-size: cover;
@@ -39,6 +41,55 @@
             background-position: bottom;
         }
         
+        ###############################################################################################################
+        */
+
+
+
+/* ################################################## MULTIPLE IMAGE CSS👇👇👇 (new)  ###################################### */
+        .hero-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/383776.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-position 0.5s ease;
+    animation: bgSlider 24s infinite;
+  }
+
+  .hero-image:hover {
+    background-position: bottom;
+  }
+
+ @keyframes bgSlider {
+  0%, 24% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://school.banglarshiksha.gov.in/sms/templates/uploads/ws/44797/383776.jpg');
+  }
+
+  25%, 49% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('assets/starimage.jpg');
+  }
+
+  50%, 74% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('assets/starimage2.jpg');
+  }
+
+  75%, 100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('assets/starimage3.jpg');
+  }
+}
+
+
+
+/*  ADD MORE IMAGES 👇👇 */
+
+
+
+
+
+  /* #################################################### HERO HEADER IMAGE SECTION END ####################################################### */
         .section-title {
             position: relative;
             display: inline-block;

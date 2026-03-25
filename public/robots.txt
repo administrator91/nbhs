@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Do not crawl the error page
+Disallow: /pages/404.html
+
+# Location of the Sitemap
+Sitemap: https://administrator91.github.io/nbhs/public/sitemap.xml
